@@ -1,0 +1,10 @@
+1:
+    noun + verb + adj
+2:
+    [noun] + verb + adj
+3:
+    noun + verb + [adj]
+4:
+    noun + [verb] + adj
+----> prepositions scattered in the sentence should be ignored
+----> verb[noun]=adj
