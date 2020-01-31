@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Dictionary {
-    private Map<String, String> words = new HashMap<>();
+    public Map<String, String> words = new HashMap<>();
     private Map<String, List<String>> groupedWords = new HashMap<String, List<String>>();
     public void addWord (String word, String type) {
         words.put(word, type);

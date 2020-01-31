@@ -13,6 +13,7 @@ public class Engine {
         Engine engine = new Engine();
         engine.init();
         engine.getWords();
+        engine.writeAllWords();
         Generator generator = new Generator(1000);
         generator.buildScenario1(1000);
 
@@ -35,6 +36,24 @@ public class Engine {
     private void init () {
         for (File file : files) {
             dictionary.addEntryToGroupedWords(file.getName());
+        }
+    }
+
+    private void writeAllWords() {
+        try {
+            BufferedWriter allDataWriter =
+                    new BufferedWriter(new FileWriter(new File("words")));
+            for (String word : dictionary.words.keySet()) {
+                StringBuilder builder = new StringBuilder(dictionary.words.get(word));
+                if (builder.toString().equals("prepositions")){
+                    continue;
+                }
+                builder.deleteCharAt(builder.toString().length() - 1);
+                allDataWriter.write(word + " " + builder.toString() + "\n");
+            }
+            allDataWriter.close();
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
     }
 

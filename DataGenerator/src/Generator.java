@@ -1,9 +1,13 @@
 public class Generator {
 
-    private MyStringBuilder data = new MyStringBuilder();
-
+    private MyStringBuilder inputData = new MyStringBuilder();
+    private MyStringBuilder targetData = new MyStringBuilder();
+    private Dictionary dictionary = new Dictionary();
     public void startGeneration() {
         generateSentence();
+        DataOutput dataOutput = new DataOutput();
+        dataOutput.writeInput(inputData);
+        dataOutput.writeTarget(targetData);
     }
 
 
@@ -12,45 +16,48 @@ public class Generator {
         switch (path) {
             case 1: {
                 generateSentence();
-                generateToken("and ");
+                generateToken("and");
                 generateSentence();
                 break;
             }
             case 2: {
-                generateNoun();
-                generateVerb();
-                generateNoun();
+                String noun1 = generateRandomWord(inputData,"noun");
+                String verb = generateRandomWord(inputData, "verb");
+                String noun2 = generateRandomWord(inputData,"noun");
+                targetData.append(noun1 + verb + "=" + noun2 + ";");
                 break;
             }
             case 3: {
-                generateNoun();
-                generateVerb();
-                generateAdjective();
+                String noun = generateRandomWord(inputData,"noun");
+                String verb = generateRandomWord(inputData,"verb");
+                String adj = generateRandomWord(inputData,"adjective");
+                targetData.append(noun + verb + "=" + adj + ";");
                 break;
             }
         }
     }
 
-    private void generateToken(String token) {
-        data.append(token);
+    private String generateToken(String token) {
+        inputData.append(token);
+        return token;
     }
 
-    private void generateNoun() {
-        data.append(Dictionary.getRandomWord("noun"));
+    private String generateRandomWord(MyStringBuilder builder, String type) {
+        String word = dictionary.getRandomWord(type);
+        builder.append(word);
+        return word;
     }
 
-    private void generateVerb() {
-        data.append(Dictionary.getRandomWord("verb"));
-    }
-
-    private void generateAdjective() {
-        data.append(Dictionary.getRandomWord("adjective"));
-    }
 
     class MyStringBuilder {
         StringBuilder data = new StringBuilder();
         void append (String string) {
             data.append(string + " ");
+        }
+
+        @Override
+        public String toString() {
+            return data.toString();
         }
     }
 }
