@@ -9,6 +9,9 @@ public class DataOutput {
         try {
             inputDataWriter = new BufferedWriter(new FileWriter("input"));
             targetDataWriter = new BufferedWriter(new FileWriter("target"));
+            trainWriter = new BufferedWriter(new FileWriter("train.csv"));
+            validationWriter = new BufferedWriter(new FileWriter("validation.csv"));
+            testWriter = new BufferedWriter(new FileWriter("test.csv"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -27,6 +30,39 @@ public class DataOutput {
         try {
             targetDataWriter.write(data.toString());
             targetDataWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private static final float TRAIN_RATIO = 3/5f, VALID_RATIO = 1 / 5f, TEST_RATIO = 1 / 5f;
+    BufferedWriter trainWriter, validationWriter, testWriter;
+    public void write (Generator.MyStringBuilder input, Generator.MyStringBuilder target) {
+        try {
+            String[] inputLines = input.data.toString().split("\n");
+            String[] targetLines = target.data.toString().split("\n");
+            int counter = 0;
+            trainWriter.write("src,trg\n");
+            while (counter < Generator.SENTENCES * TRAIN_RATIO) {
+                trainWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
+                counter++;
+            }
+            trainWriter.close();
+
+            int saved = counter;
+            validationWriter.write("src,trg\n");
+            while (counter < saved + Generator.SENTENCES * VALID_RATIO) {
+                validationWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
+                counter++;
+            }
+            validationWriter.close();
+
+            saved = counter;
+            testWriter.write("src,trg\n");
+            while (counter < saved + Generator.SENTENCES * TEST_RATIO) {
+                testWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
+                counter++;
+            }
+            testWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
