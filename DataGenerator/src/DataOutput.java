@@ -50,7 +50,7 @@ public class DataOutput {
 
             int saved = counter;
             validationWriter.write("src,trg\n");
-            while (counter < saved + Generator.SENTENCES * VALID_RATIO) {
+            while (counter < Generator.SENTENCES && counter < saved + Generator.SENTENCES * VALID_RATIO) {
                 validationWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
                 counter++;
             }
@@ -58,7 +58,7 @@ public class DataOutput {
 
             saved = counter;
             testWriter.write("src,trg\n");
-            while (counter < saved + Generator.SENTENCES * TEST_RATIO) {
+            while (counter < Generator.SENTENCES && counter < saved + Generator.SENTENCES * TEST_RATIO) {
                 testWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
                 counter++;
             }

@@ -34,14 +34,16 @@ public class Generator {
                 String noun1 = generateRandomWord(inputData,"noun");
                 String verb = generateRandomWord(inputData, "verb");
                 String noun2 = generateRandomWord(inputData,"noun");
-                targetData.append(noun1 + verb + " = " + noun2 + ";");
+                targetData.append(noun2 + " " + verb + " " + noun1);
+                //targetData.append(noun1 + verb + " = " + noun2 + " ;");
                 break;
             }
             case 3: {
                 String noun = generateRandomWord(inputData,"noun");
                 String verb = generateRandomWord(inputData,"verb");
                 String adj = generateRandomWord(inputData,"adjective");
-                targetData.append(noun + verb + " = " + adj + "; ");
+                targetData.append(adj + " " + verb + " " + noun);
+                //targetData.append(noun + verb + " = " + adj + " ;");
                 break;
             }
         }
