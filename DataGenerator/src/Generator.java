@@ -4,7 +4,7 @@ public class Generator {
     private MyStringBuilder targetData = new MyStringBuilder();
     private Dictionary dictionary = new Dictionary();
     PatternCreator patternCreator;
-    public static final int SENTENCES = 1000;
+    public static final int SENTENCES = 10000;
     public void startGeneration() {
         patternCreator = new PatternCreator(dictionary);
         patternCreator.createCooccurrenceMatrix();
