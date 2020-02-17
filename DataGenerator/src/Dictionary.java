@@ -33,9 +33,10 @@ public class Dictionary {
 
     private Integer[] sizes;
     private String[] typeIndex;
-    public Integer[] getSize() {
+    public Integer[] getNumberOfTypes() {
         if (sizes == null) {
             sizes = new Integer[dictionary.keySet().size()];
+            typeIndex = new String[sizes.length];
             Iterator<String> it = dictionary.keySet().iterator();
             int counter = 0;
             while (it.hasNext()) {
@@ -47,7 +48,21 @@ public class Dictionary {
         return sizes;
     }
 
+    public Pair<String, String> getWordsPair(String type1, int index1, String type2, int index2) {
+        return new Pair(dictionary.get(type1).get(index1), dictionary.get(type2).get(index2));
+    }
+
+
     public String[] getIndexes() {
         return typeIndex;
+    }
+
+    class Pair<T, E> {
+        public T string1;
+        public E string2;
+        Pair(T string1, E string2) {
+            this.string1 = string1;
+            this.string2 = string2;
+        }
     }
 }

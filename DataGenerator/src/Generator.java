@@ -5,6 +5,12 @@ public class Generator {
     private Dictionary dictionary = new Dictionary();
     public static final int SENTENCES = 1000;
     public void startGeneration() {
+        PatternCreator patternCreator = new PatternCreator(dictionary);
+        patternCreator.createCooccurrenceMatrix();
+        for (int i = 0; i < 100; i++) {
+            Dictionary.Pair<String, String> pair = patternCreator.pickPair("verb", "noun");
+            System.out.println(pair.string1 + " " + pair.string2);
+        }
         int counter = 0;
         while (counter < SENTENCES) {
             generateSentence();
