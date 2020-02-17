@@ -25,10 +25,11 @@ public class PatternCreator {
                 double sum = 0;
                 for (int word1Index = 0; word1Index < sizes[i]; word1Index++) {
                     for (int word2Index = 0; word2Index < sizes[j]; word2Index++) {
-                        generateValue(word1Index, word2Index, probs.get(concat));
-                        sum += probs.get(concat)[word1Index][word2Index];
+                        double p = generateValue();
+                        probs.get(concat)[word1Index][word2Index] = p;
+                        sum += p;
+
                     }
-                    System.out.println();
                 }
                 totalWeights.put(concat, sum);
             }
@@ -42,7 +43,7 @@ public class PatternCreator {
         double[][] mat = probs.get(concat);
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat[i].length; j++) {
-                if (current < location) {
+                if (current + mat[i][j]< location) {
                     current += mat[i][j];
                 }
                 else {
@@ -52,16 +53,40 @@ public class PatternCreator {
         }
         return null;
     }
+    public Dictionary.Pair<String,String> pickPair(String type1, int index1, String type2) {
+        String concat = type1 + type2;
+        Double location = (new Random()).nextDouble() * sumOf(concat, index1);
+        double current  = 0;
+        double[][] mat = probs.get(concat);
+        int i = index1;
+        for (int j = 0; j < mat[i].length; j++) {
+            if (current + mat[i][j]< location) {
+                current += mat[i][j];
+            }
+            else {
+                //System.out.print(mat[i][j] + " ");
+                return dictionary.getWordsPair(type1, i, type2, j);
+            }
+        }
+        return null;
+    }
 
-    private static final double CHANCE = 0.1;
-    private void generateValue(int i, int j, double[][] mat) {
+    private double sumOf (String concat, int index) {
+        double sum = 0;
+        for (int j = 0; j < probs.get(concat)[index].length; j++) {
+            sum += probs.get(concat)[index][j];
+        }
+        return sum;
+    }
+
+    private static final double CHANCE = 0.01;
+    private static double BOOSTER = 100, REDUCER = 10;
+    private double generateValue() {
         Random random = new Random();
         if (Math.random() < CHANCE) {
-            mat[i][j] = Math.abs(random.nextGaussian());
+            return BOOSTER * Math.abs(random.nextGaussian());
         }
-        else {
-            mat[i][j] = random.nextFloat() / 10;
-        }
+        return random.nextFloat() / REDUCER;
     }
-    
+
 }

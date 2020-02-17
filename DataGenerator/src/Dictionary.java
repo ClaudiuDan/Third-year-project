@@ -65,4 +65,8 @@ public class Dictionary {
             this.string2 = string2;
         }
     }
+
+    public int getPosition(String type, String word) {
+        return dictionary.get(type).indexOf(word);
+    }
 }

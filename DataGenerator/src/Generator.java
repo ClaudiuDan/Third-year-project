@@ -3,14 +3,16 @@ public class Generator {
     private MyStringBuilder inputData = new MyStringBuilder();
     private MyStringBuilder targetData = new MyStringBuilder();
     private Dictionary dictionary = new Dictionary();
+    PatternCreator patternCreator;
     public static final int SENTENCES = 1000;
     public void startGeneration() {
-        PatternCreator patternCreator = new PatternCreator(dictionary);
+        patternCreator = new PatternCreator(dictionary);
         patternCreator.createCooccurrenceMatrix();
-        for (int i = 0; i < 100; i++) {
+        /*for (int i = 0; i < 100; i++) {
             Dictionary.Pair<String, String> pair = patternCreator.pickPair("verb", "noun");
+            pair = patternCreator.pickPair("verb", 5, "noun");
             System.out.println(pair.string1 + " " + pair.string2);
-        }
+        }*/
         int counter = 0;
         while (counter < SENTENCES) {
             generateSentence();
@@ -37,19 +39,29 @@ public class Generator {
                 break;
             }
             case 2: {
-                String noun1 = generateRandomWord(inputData,"noun");
+                /*String noun1 = generateRandomWord(inputData,"noun");
                 String verb = generateRandomWord(inputData, "verb");
-                String noun2 = generateRandomWord(inputData,"noun");
-                targetData.append(noun2 + " " + verb + " " + noun1);
-                //targetData.append(noun1 + verb + " = " + noun2 + " ;");
+                String noun2 = generateRandomWord(inputData,"noun");*/
+                Dictionary.Pair<String, String> pair = patternCreator.pickPair("noun", "verb");
+                String noun1 = pair.string1, verb = pair.string2;
+                pair = patternCreator.pickPair("verb", dictionary.getPosition("verb", verb), "noun");
+                String noun2 = pair.string2;
+                inputData.append(noun1); inputData.append(verb); inputData.append(noun2);
+                //targetData.append(noun2 + " " + verb + " " + noun1);
+                targetData.append(noun1 + verb + " = " + noun2 + " ;");
                 break;
             }
             case 3: {
-                String noun = generateRandomWord(inputData,"noun");
+                /*String noun = generateRandomWord(inputData,"noun");
                 String verb = generateRandomWord(inputData,"verb");
-                String adj = generateRandomWord(inputData,"adjective");
-                targetData.append(adj + " " + verb + " " + noun);
-                //targetData.append(noun + verb + " = " + adj + " ;");
+                String adj = generateRandomWord(inputData,"adjective");*/
+                Dictionary.Pair<String, String> pair = patternCreator.pickPair("noun", "verb");
+                String noun = pair.string1, verb = pair.string2;
+                pair = patternCreator.pickPair("verb", dictionary.getPosition("verb", verb), "adjective");
+                String adj = pair.string2;
+                inputData.append(noun); inputData.append(verb); inputData.append(adj);
+                //targetData.append(adj + " " + verb + " " + noun);
+                targetData.append(noun + verb + " = " + adj + " ;");
                 break;
             }
         }
