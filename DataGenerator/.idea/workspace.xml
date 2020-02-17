@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input" beforeDir="false" afterPath="$PROJECT_DIR$/input" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/DataOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/DataOutput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Engine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Generator$MyStringBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Generator$MyStringBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target" beforeDir="false" afterPath="$PROJECT_DIR$/target" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/validation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +88,7 @@
       <workItem from="1580988756061" duration="518000" />
       <workItem from="1581167422145" duration="2646000" />
       <workItem from="1581506603737" duration="7545000" />
-      <workItem from="1581886489574" duration="292000" />
+      <workItem from="1581886489574" duration="2903000" />
     </task>
     <servers />
   </component>

@@ -30,4 +30,24 @@ public class Dictionary {
             }
         }
     }
+
+    private Integer[] sizes;
+    private String[] typeIndex;
+    public Integer[] getSize() {
+        if (sizes == null) {
+            sizes = new Integer[dictionary.keySet().size()];
+            Iterator<String> it = dictionary.keySet().iterator();
+            int counter = 0;
+            while (it.hasNext()) {
+                String s = it.next();
+                typeIndex[counter] = s;
+                sizes[counter++] = dictionary.get(s).size();
+            }
+        }
+        return sizes;
+    }
+
+    public String[] getIndexes() {
+        return typeIndex;
+    }
 }
