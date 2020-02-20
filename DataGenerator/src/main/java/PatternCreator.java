@@ -7,8 +7,11 @@ public class PatternCreator {
 
     private Dictionary dictionary;
 
-    PatternCreator(Dictionary dictionary) {
+    PatternCreator(Dictionary dictionary, String mode) {
         this.dictionary = dictionary;
+        if (mode.equals("uniform")) {
+            CHANCE = 0; BOOSTER = 1; REDUCER = 1;
+        }
     }
 
     // one dimension for each word type
@@ -79,11 +82,12 @@ public class PatternCreator {
         return sum;
     }
 
-    private static final double CHANCE = 0.01;
-    private static double BOOSTER = 100, REDUCER = 10;
+    private double CHANCE = 0.01;
+    private double BOOSTER = 100, REDUCER = 10;
     private double generateValue() {
         Random random = new Random();
         if (Math.random() < CHANCE) {
+            System.out.println("aici");
             return BOOSTER * Math.abs(random.nextGaussian());
         }
         return random.nextFloat() / REDUCER;

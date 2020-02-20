@@ -6,7 +6,7 @@ public class Generator {
     PatternCreator patternCreator;
     public static final int SENTENCES = 10000;
     public void startGeneration() {
-        patternCreator = new PatternCreator(dictionary);
+        patternCreator = new PatternCreator(dictionary, "uniform");
         patternCreator.createCooccurrenceMatrix();
         /*for (int i = 0; i < 100; i++) {
             Dictionary.Pair<String, String> pair = patternCreator.pickPair("verb", "noun");

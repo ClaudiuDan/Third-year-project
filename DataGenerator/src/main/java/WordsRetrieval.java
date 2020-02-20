@@ -29,7 +29,7 @@ public class WordsRetrieval {
         return words;
     }
 
-    class Word {
+    static class Word {
         String type, value;
 
         Word (String value, String type) {
