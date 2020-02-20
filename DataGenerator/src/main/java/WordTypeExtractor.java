@@ -4,22 +4,27 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
+
 public class WordTypeExtractor {
     public WordsRetrieval.Word getWordType (String wordValue) {
-        HttpURLConnection conn = initConnection(wordValue);
-        String data = readFromConnection(conn);
+        HttpRequest req = initConnection(wordValue);
+        String data = readFromConnection(req);
         WordsRetrieval.Word word = getWord(data);
-        conn.disconnect();
         return word;
     }
 
-    private HttpURLConnection initConnection (String word) {
+    private HttpRequest initConnection (String word) {
         try {
-            URL url = new URL("https://www.google.com/search?q=" + word + "+meaning&rlz=1C1CHBF_en-GBGB864GB864&oq=word+meaning&aqs=chrome..69i57j0l7.1106j0j7&sourceid=chrome&ie=UTF-8");
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
-            return conn;
+            GenericUrl url = new GenericUrl("https://www.google.com/search?q=" + word + "+word+meaning=&rlz=1C1CHBF_en-GBGB864GB864&oq=word+meaning&aqs=chrome..69i57j0l7.1106j0j7&sourceid=chrome&ie=UTF-8");
+            NetHttpTransport netHttpTransport = new NetHttpTransport();
+            HttpRequest req = netHttpTransport.createRequestFactory().buildGetRequest(url);
+            req.setRequestMethod("GET");
+            return req;
         } catch (ProtocolException | MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -28,25 +33,31 @@ public class WordTypeExtractor {
         return null;
     }
 
-    private String readFromConnection(HttpURLConnection conn)  {
+    private String readFromConnection(HttpRequest req)  {
         String allData = "";
+        HttpResponse response = null;
         try {
-            InputStream inputStream = conn.getInputStream();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            response = req.execute();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(response.getContent()));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 allData += line;
             }
         } catch (IOException e) {
-
             e.printStackTrace();
 
+        }
+        try {
+            response.disconnect();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
         return allData;
     }
 
     private static final String TYPES[] = new String[]{"noun","verb","adjective", "determiner &#183; pronoun &#183; adjective", "preposition", "determiner", "adverb"};
-    private static final String START = "<span>", END = "</span>";
+    private static final String START = "<span class=\"r0bn4c rQMQod\">", END = "</span>";
     private WordsRetrieval.Word getWord(String data) {
         WordsRetrieval.Word word = new WordsRetrieval.Word(getValue(data), getType(data));
         if (word.type != null && word.type.equals(TYPES[3])) {
@@ -56,15 +67,8 @@ public class WordTypeExtractor {
     }
 
     private String getValue(String data) {
-        String s = "data-dobid=\"hdw\"";
-        int index;
-
-        if (flag) {
-            index = data.lastIndexOf(s);
-        }
-        else {
-            index = data.indexOf(s);
-        }
+        String s = "play();});});</script>";
+        int index = data.indexOf(s);
         flag = false;
         index += s.length() + 1;
         StringBuilder builder = new StringBuilder("");

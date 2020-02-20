@@ -8,7 +8,7 @@ public class DataOutput {
     DataOutput() {
         try {
             inputDataWriter = new BufferedWriter(new FileWriter("input"));
-            targetDataWriter = new BufferedWriter(new FileWriter("target"));
+            targetDataWriter = new BufferedWriter(new FileWriter("targetText"));
             trainWriter = new BufferedWriter(new FileWriter("train.csv"));
             validationWriter = new BufferedWriter(new FileWriter("validation.csv"));
             testWriter = new BufferedWriter(new FileWriter("test.csv"));

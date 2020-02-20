@@ -2,24 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_28_2_android.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_http_client_google_http_client_1_34_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_grpc_grpc_context_1_22_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opencensus_opencensus_api_0_24_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opencensus_opencensus_contrib_http_util_0_24_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_compat_qual_2_5_5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DataGenerator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/input" beforeDir="false" afterPath="$PROJECT_DIR$/input" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/DataOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/DataOutput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Dictionary$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Dictionary$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Engine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Generator$MyStringBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Generator$MyStringBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Grammar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Grammar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/Helper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/PatternCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/PatternCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/WordsRetrieval$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/WordsRetrieval$Word.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/WordsRetrieval.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataGenerator/WordsRetrieval.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target" beforeDir="false" afterPath="$PROJECT_DIR$/target" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/DataOutput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Dictionary$Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Dictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Generator$MyStringBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Generator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Grammar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/Helper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/PatternCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/TextHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/WordTypeExtractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/WordsRetrieval$Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataGenerator/WordsRetrieval.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataOutput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Generator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grammar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatternCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordTypeExtractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WordsRetrieval.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text" beforeDir="false" afterPath="$PROJECT_DIR$/text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/validation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordsFromText" beforeDir="false" afterPath="$PROJECT_DIR$/wordsFromText" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +74,13 @@
       </set>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1X5iB0u8BE4PiZYRIRVcYOSIUJO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -59,10 +96,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -117,7 +154,7 @@
       <workItem from="1581961337432" duration="7009000" />
       <workItem from="1582031038117" duration="17882000" />
       <workItem from="1582204126154" duration="117000" />
-      <workItem from="1582204254021" duration="223000" />
+      <workItem from="1582204254021" duration="4779000" />
     </task>
     <servers />
   </component>
@@ -141,9 +178,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/WordTypeExtractor.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/main/java/TextHandler.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -13,6 +13,9 @@ public class TextHandler {
             String line;
             WordTypeExtractor wordTypeExtractor = new WordTypeExtractor();
             writer = new BufferedWriter(new FileWriter("wordsFromText"));
+            BufferedWriter errorWriter = new BufferedWriter(new FileWriter("errors"));
+            addMissingWords();
+
             while ((line = reader.readLine()) != null) {
                 String filtered = line.replaceAll("[^A-Za-z]+", " ");
                 String[] splitted = filtered.split(" ");
@@ -23,18 +26,25 @@ public class TextHandler {
                     }
                     apparitions.put(value, true);
                     WordsRetrieval.Word word = wordTypeExtractor.getWordType(value);
-                    if (word.type != null) {
-                        writer.write(word.value + " " + word.type + "\n");
+                    if (word.value.equals("word")) {
+                        errorWriter.write(rawValue + "\n");
+                        continue;
+                    }
+                    if (word.type != null && !word.value.equals("word")) {
+
+                        writer.write(value + " " + word.value + " " + word.type + "\n");
                         counter++;
                         System.out.println(counter);
-                        if (counter == 10000) {
+                        if (counter == 10) {
                             writer.close();
+                            errorWriter.close();
                             System.exit(0);
                         }
                     }
                 }
             }
-
+            writer.close();
+            errorWriter.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -45,5 +55,10 @@ public class TextHandler {
 
     public void close () throws IOException {
         writer.close();
+    }
+
+    private void addMissingWords() throws IOException {
+        writer.write("word word noun\n");
+        writer.write("is is noun\n");
     }
 }
