@@ -35,7 +35,7 @@ public class TextHandler {
                         writer.write(value + " " + word.value + " " + word.type + "\n");
                         counter++;
                         System.out.println(counter);
-                        if (counter == 10) {
+                        if (counter == 10000) {
                             writer.close();
                             errorWriter.close();
                             System.exit(0);
