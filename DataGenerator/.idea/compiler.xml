@@ -9,8 +9,5 @@
         <module name="DataGenerator" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="DataGenerator" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

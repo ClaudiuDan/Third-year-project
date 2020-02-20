@@ -28,7 +28,7 @@ public class WordTypeExtractor {
         } catch (ProtocolException | MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            TextHandler.close();
         }
         return null;
     }
@@ -51,6 +51,7 @@ public class WordTypeExtractor {
             response.disconnect();
         }
         catch (IOException e) {
+            TextHandler.close();
             e.printStackTrace();
         }
         return allData;
