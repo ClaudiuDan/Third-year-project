@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Dictionary {
     private Map<String, List<String>> dictionary = new HashMap<>();
+    private Map<String, WordsRetrieval.Word> wordMappings = new HashMap<>();
     Dictionary() {
         WordsRetrieval wordsRetrieval = new WordsRetrieval();
         List<WordsRetrieval.Word> words = wordsRetrieval.getWords();
@@ -18,7 +19,8 @@ public class Dictionary {
     private void fillDictionary(List<WordsRetrieval.Word> words) {
         for (WordsRetrieval.Word word : words) {
             dictionary.computeIfAbsent(word.type, (k) -> new ArrayList<>());
-            dictionary.get(word.type).add(word.value);
+            dictionary.get(word.type).add(word.mapping);
+            wordMappings.put(word.value, word);
         }
     }
 
@@ -68,5 +70,9 @@ public class Dictionary {
 
     public int getPosition(String type, String word) {
         return dictionary.get(type).indexOf(word);
+    }
+
+    public WordsRetrieval.Word getMapping (String value) {
+        return wordMappings.get(value);
     }
 }

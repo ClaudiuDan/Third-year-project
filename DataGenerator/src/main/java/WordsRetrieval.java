@@ -8,7 +8,7 @@ public class WordsRetrieval {
 
     WordsRetrieval () {
         try {
-            reader = new BufferedReader(new FileReader(new File("words")));
+            reader = new BufferedReader(new FileReader(new File("wordsFromText")));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -20,7 +20,7 @@ public class WordsRetrieval {
         try {
             while ((line = reader.readLine()) != null) {
                 String[] split = line.split(" ");
-                words.add(new Word(split[0], split[1]));
+                words.add(new Word(split[1], split[2], split[0]));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -30,11 +30,16 @@ public class WordsRetrieval {
     }
 
     static class Word {
-        String type, value;
-
+        String type, value, mapping;
         Word (String value, String type) {
             this.type = type;
             this.value = value;
+        }
+
+        Word (String value, String type, String mapping) {
+            this.type = type;
+            this.value = value;
+            this.mapping = mapping;
         }
     }
 }

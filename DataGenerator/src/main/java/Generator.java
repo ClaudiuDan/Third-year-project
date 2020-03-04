@@ -5,9 +5,10 @@ public class Generator {
     private Dictionary dictionary = new Dictionary();
     PatternCreator patternCreator;
     public static final int SENTENCES = 10000;
+    public static final int PHRASE_LEN = 5;
     public void startGeneration() {
         patternCreator = new PatternCreator(dictionary, "uniform");
-        patternCreator.createCooccurrenceMatrix();
+        patternCreator.start();
         /*for (int i = 0; i < 100; i++) {
             Dictionary.Pair<String, String> pair = patternCreator.pickPair("verb", "noun");
             pair = patternCreator.pickPair("verb", 5, "noun");
@@ -34,37 +35,38 @@ public class Generator {
         switch (path) {
             case 1: {
                 generateSentence();
-                generateToken("and");
-                generateSentence();
+//                generateSentence();
                 break;
             }
             case 2: {
-                /*String noun1 = generateRandomWord(inputData,"noun");
-                String verb = generateRandomWord(inputData, "verb");
-                String noun2 = generateRandomWord(inputData,"noun");*/
                 Dictionary.Pair<String, String> pair = patternCreator.pickPair("noun", "verb");
                 String noun1 = pair.string1, verb = pair.string2;
-                pair = patternCreator.pickPair("verb", dictionary.getPosition("verb", verb), "noun");
+                pair = patternCreator.pickPair("verb", verb, "noun");
                 String noun2 = pair.string2;
-                inputData.append(noun1); inputData.append(verb); inputData.append(noun2);
-                //targetData.append(noun2 + " " + verb + " " + noun1);
-                targetData.append(noun1 + verb + " = " + noun2 + " ;");
+                inputData.append(noun1, verb, noun2, ".");
+                targetData.append("if entities . find ( " + noun1 + " ) ! = None : newline" +
+                        " newtab entities [ " + noun1 + " ] [ " + verb + " ] = " + noun2 + " newline");
+                generateQuestion(verb, noun1);
                 break;
             }
             case 3: {
-                /*String noun = generateRandomWord(inputData,"noun");
-                String verb = generateRandomWord(inputData,"verb");
-                String adj = generateRandomWord(inputData,"adjective");*/
                 Dictionary.Pair<String, String> pair = patternCreator.pickPair("noun", "verb");
                 String noun = pair.string1, verb = pair.string2;
-                pair = patternCreator.pickPair("verb", dictionary.getPosition("verb", verb), "adjective");
+                pair = patternCreator.pickPair("verb", verb, "adjective");
                 String adj = pair.string2;
-                inputData.append(noun); inputData.append(verb); inputData.append(adj);
-                //targetData.append(adj + " " + verb + " " + noun);
-                targetData.append(noun + verb + " = " + adj + " ;");
+                inputData.append(noun, verb, adj, ".");
+                targetData.append("if entities . find ( " + noun + " ) ! = None : newline" +
+                        " newtab entities [ " + noun + " ] [ " + verb + " ] = " + noun + " newline");
+                generateQuestion(verb, adj);
                 break;
             }
         }
+    }
+
+    //TODO: variable parameters length append
+    private void generateQuestion(String verb, String noun) {
+        inputData.append(noun, verb); generateToken("?");
+        targetData.append("print ( " + noun + " [ " + verb + " ] ) newline");
     }
 
     private String generateToken(String token) {
@@ -81,8 +83,10 @@ public class Generator {
 
     class MyStringBuilder {
         StringBuilder data = new StringBuilder();
-        void append (String string) {
-            data.append(string + " ");
+        void append (String ... strings) {
+            for (String s : strings) {
+                data.append(s + " ");
+            }
         }
         void removeLastSpace() {
             data.deleteCharAt(data.length() - 1);
