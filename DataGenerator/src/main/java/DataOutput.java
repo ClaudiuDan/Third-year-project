@@ -16,7 +16,6 @@ public class DataOutput {
             e.printStackTrace();
         }
     }
-
     public void writeInput(Generator.MyStringBuilder data) {
         try {
             inputDataWriter.write(data.toString());
@@ -36,7 +35,7 @@ public class DataOutput {
     }
     private static final float TRAIN_RATIO = 3/5f, VALID_RATIO = 1 / 5f, TEST_RATIO = 1 / 5f;
     BufferedWriter trainWriter, validationWriter, testWriter;
-    public void write (Generator.MyStringBuilder input, Generator.MyStringBuilder target) {
+    public void buildDatasets (Generator.MyStringBuilder input, Generator.MyStringBuilder target) {
         try {
             String[] inputLines = input.data.toString().split("\n");
             String[] targetLines = target.data.toString().split("\n");

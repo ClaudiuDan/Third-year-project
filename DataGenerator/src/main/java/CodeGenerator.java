@@ -1,6 +1,8 @@
 public class CodeGenerator extends Generator {
-    private static MyStringBuilder targetData = new MyStringBuilder();
-    public static void generateAddEdgeAction (String from, String to, String action) {
-        targetData.append("G.add_edge(" + from + "," + to + ", action=" + action + ") newline");
+    public void generateAddEdgeAction (String from, String to, String action) {
+        data.append("G.add_edge(" + from + "," + to + ",action=\' " + action + " \') newline"); }
+    public void generateAnswerRelation (String entity1, String entity2) {
+        data.append("G.has_edge( " + entity1 + " , " + entity2 + " ) newline");
     }
+
 }

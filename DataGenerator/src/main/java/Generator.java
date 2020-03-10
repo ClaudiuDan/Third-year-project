@@ -1,7 +1,7 @@
 public class Generator {
-
-    private MyStringBuilder inputData = new MyStringBuilder();
-    private MyStringBuilder targetData = new MyStringBuilder();
+    protected MyStringBuilder data = new MyStringBuilder();
+    private static CodeGenerator codeGenerator = new CodeGenerator();
+    private static TextGenerator textGenerator = new TextGenerator();
     private Dictionary dictionary = new Dictionary();
     PatternCreator patternCreator;
     public static final int SENTENCES = 10000;
@@ -17,16 +17,14 @@ public class Generator {
         int counter = 0;
         while (counter < SENTENCES) {
             generateSentence();
-            inputData.removeLastSpace();
-            inputData.appendNewLine();
-            targetData.removeLastSpace();
-            targetData.appendNewLine();
+            textGenerator.sentenceFinished();
+            codeGenerator.sentenceFinished();
             counter++;
         }
         DataOutput dataOutput = new DataOutput();
-        dataOutput.writeInput(inputData);
-        dataOutput.writeTarget(targetData);
-        dataOutput.write(inputData, targetData);
+        dataOutput.writeInput(textGenerator.data);
+        dataOutput.writeTarget(codeGenerator.data);
+        dataOutput.buildDatasets(textGenerator.data, codeGenerator.data);
     }
 
 
@@ -43,10 +41,10 @@ public class Generator {
                 String noun1 = pair.string1, verb = pair.string2;
                 pair = patternCreator.pickPair("verb", verb, "noun");
                 String noun2 = pair.string2;
-                inputData.append(noun1, verb, noun2, ".");
-                /*targetData.append("if entities . find ( " + noun1 + " ) ! = None : newline" +
-                        " newtab entities [ " + noun1 + " ] [ " + verb + " ] = " + noun2 + " newline");*/
-                generateQuestion(verb, noun1);
+                textGenerator.generateSimpleSentence(noun1, verb, noun2);
+                codeGenerator.generateAddEdgeAction(noun1, noun2, verb);
+                textGenerator.generateQuestionCheckRelation(noun1, noun2);
+                codeGenerator.generateAnswerRelation(noun1, noun2);
                 break;
             }
             case 3: {
@@ -54,33 +52,13 @@ public class Generator {
                 String noun = pair.string1, verb = pair.string2;
                 pair = patternCreator.pickPair("verb", verb, "adjective");
                 String adj = pair.string2;
-                inputData.append(noun, verb, adj, ".");
-                /*targetData.append("if entities . find ( " + noun + " ) ! = None : newline" +
-                        " newtab entities [ " + noun + " ] [ " + verb + " ] = " + noun + " newline");*/
-                generateQuestion(verb, adj);
+                textGenerator.generateSimpleSentence(noun, verb, adj);
+                textGenerator.generateQuestionCheckRelation(noun, adj);
+                codeGenerator.generateAnswerRelation(noun, adj);
                 break;
             }
         }
     }
-
-    //TODO: variable parameters length append
-    private void generateQuestion(String verb, String noun) {
-        inputData.append(noun, verb); generateToken("?");
-        //targetData.append("print ( " + noun + " [ " + verb + " ] ) newline");
-        //targetData.append("")
-    }
-
-    private String generateToken(String token) {
-        inputData.append(token);
-        return token;
-    }
-
-    private String generateRandomWord(MyStringBuilder builder, String type) {
-        String word = dictionary.getRandomWord(type);
-        builder.append(word);
-        return word;
-    }
-
 
     static class MyStringBuilder {
         StringBuilder data = new StringBuilder();
@@ -99,5 +77,10 @@ public class Generator {
         public String toString() {
             return data.toString();
         }
+    }
+
+    protected void sentenceFinished() {
+        data.removeLastSpace();
+        data.appendNewLine();
     }
 }

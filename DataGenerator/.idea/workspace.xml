@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input" beforeDir="false" afterPath="$PROJECT_DIR$/input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataOutput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grammar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/QuestionGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataOutput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Engine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/targetText" beforeDir="false" afterPath="$PROJECT_DIR$/targetText" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/validation.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +128,7 @@
       <workItem from="1583173889570" duration="814000" />
       <workItem from="1583236860706" duration="8538000" />
       <workItem from="1583322865563" duration="7642000" />
-      <workItem from="1583845513199" duration="2132000" />
+      <workItem from="1583845513199" duration="6609000" />
     </task>
     <servers />
   </component>
