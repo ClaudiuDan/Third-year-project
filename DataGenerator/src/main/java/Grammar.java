@@ -26,8 +26,14 @@ public class Grammar {
 
     /**
      CODE TRANSLATION
-            2, 3: if entities . find ( word1 ) ! = None : newline newtab entities [ word1 ] [ word2 ] = word3 newline
-
+            2:
+                if entities . find ( word1 ) ! = None : newline
+                    newtab entities [ word1 ] [ 'actions' ] . append ( word2 ) newline
+                else : newline
+                    newtab entities [ word1 ] = { 'actions' : [ ] , 'attributes' : [ ] }
+            3:
+                 if entities . find ( word1 ) ! = None : newline
+                     newtab entities [ word1 ] [ 'attributes' ] . append ( word2 ) newline
 
      */
 }

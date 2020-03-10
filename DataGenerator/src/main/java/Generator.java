@@ -44,8 +44,8 @@ public class Generator {
                 pair = patternCreator.pickPair("verb", verb, "noun");
                 String noun2 = pair.string2;
                 inputData.append(noun1, verb, noun2, ".");
-                targetData.append("if entities . find ( " + noun1 + " ) ! = None : newline" +
-                        " newtab entities [ " + noun1 + " ] [ " + verb + " ] = " + noun2 + " newline");
+                /*targetData.append("if entities . find ( " + noun1 + " ) ! = None : newline" +
+                        " newtab entities [ " + noun1 + " ] [ " + verb + " ] = " + noun2 + " newline");*/
                 generateQuestion(verb, noun1);
                 break;
             }
@@ -55,8 +55,8 @@ public class Generator {
                 pair = patternCreator.pickPair("verb", verb, "adjective");
                 String adj = pair.string2;
                 inputData.append(noun, verb, adj, ".");
-                targetData.append("if entities . find ( " + noun + " ) ! = None : newline" +
-                        " newtab entities [ " + noun + " ] [ " + verb + " ] = " + noun + " newline");
+                /*targetData.append("if entities . find ( " + noun + " ) ! = None : newline" +
+                        " newtab entities [ " + noun + " ] [ " + verb + " ] = " + noun + " newline");*/
                 generateQuestion(verb, adj);
                 break;
             }
@@ -66,7 +66,8 @@ public class Generator {
     //TODO: variable parameters length append
     private void generateQuestion(String verb, String noun) {
         inputData.append(noun, verb); generateToken("?");
-        targetData.append("print ( " + noun + " [ " + verb + " ] ) newline");
+        //targetData.append("print ( " + noun + " [ " + verb + " ] ) newline");
+        //targetData.append("")
     }
 
     private String generateToken(String token) {
@@ -81,7 +82,7 @@ public class Generator {
     }
 
 
-    class MyStringBuilder {
+    static class MyStringBuilder {
         StringBuilder data = new StringBuilder();
         void append (String ... strings) {
             for (String s : strings) {
