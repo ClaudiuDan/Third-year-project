@@ -60,6 +60,8 @@ public class PatternCreator {
         }
         return null;
     }
+
+
     public Dictionary.Pair<String,String> pickPair(String type1, String word, String type2) {
         int index1 = dictionary.getPosition(type1, word);
         String concat = type1 + type2;

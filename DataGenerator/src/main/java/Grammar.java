@@ -1,5 +1,12 @@
 public class Grammar {
     public static final int SENTENCE_LENGTH = 3;
+
+    public class Sentence {
+        String[] words;
+        int index;
+    }
+
+
     /**
      sentence:  1: sentence 'and' sentence // deprecated
                 2: noun verb noun
