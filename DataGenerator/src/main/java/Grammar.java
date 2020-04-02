@@ -1,10 +1,5 @@
 public class Grammar {
-    public static final int SENTENCE_LENGTH = 3;
-
-    public class Sentence {
-        String[] words;
-        int index;
-    }
+    public static final int POSSIBLE_GENERATIONS = 3;
 
 
     /**

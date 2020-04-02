@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/input" beforeDir="false" afterPath="$PROJECT_DIR$/input" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodeGenerator.java" afterDir="false" />
@@ -9,13 +10,18 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grammar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PatternCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PatternCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TextGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WordTypeExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WordTypeExtractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataOutput.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Grammar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Grammar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PatternCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PatternCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/QuestionPicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/QuestionPicker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TextGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordTypeExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordTypeExtractor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/targetText" beforeDir="false" afterPath="$PROJECT_DIR$/targetText" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
@@ -69,7 +75,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -137,12 +143,20 @@
       <workItem from="1584217458631" duration="3172000" />
       <workItem from="1584469753838" duration="1312000" />
       <workItem from="1584552685118" duration="2585000" />
-      <workItem from="1584637062228" duration="7505000" />
+      <workItem from="1584637062228" duration="8185000" />
+      <workItem from="1584895154081" duration="2236000" />
+      <workItem from="1585066077498" duration="29600000" />
+      <workItem from="1585404715151" duration="7414000" />
+      <workItem from="1585742355932" duration="4220000" />
+      <workItem from="1585751461398" duration="11853000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -165,6 +179,21 @@
           <line>48</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/QuestionPicker.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/QuestionPicker.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/QuestionPicker.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -173,32 +202,8 @@
         <watch expression="Generator.SENTENCES * TRAIN_RATIO" language="JAVA" />
         <watch expression="((float)Generator.SENTENCES) * TRAIN_RATIO" language="JAVA" />
         <watch expression="TRAIN_RATIO" language="JAVA" />
+        <watch expression="patternCreator.pickPair(&quot;noun&quot;, noun, &quot;adjective&quot;).string2" language="JAVA" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>TRAIN_RATIO</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>((float)Generator.SENTENCES) * TRAIN_RATIO</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Generator.SENTENCES * TRAIN_RATIO</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Generator.SENTENCES</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>com.sun.tools.javac.jvm.Gen</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>

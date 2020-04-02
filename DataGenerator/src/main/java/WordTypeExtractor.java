@@ -10,6 +10,7 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 
+@Deprecated
 public class WordTypeExtractor {
     public WordsRetrieval.Word getWordType (String wordValue) {
         HttpRequest req = initConnection(wordValue);
