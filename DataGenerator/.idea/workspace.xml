@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input" beforeDir="false" afterPath="$PROJECT_DIR$/input" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Grammar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PatternCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PatternCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TextGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WordTypeExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WordTypeExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Grammar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Grammar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PatternCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PatternCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/QuestionPicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/QuestionPicker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TextGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordTypeExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordTypeExtractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/targetText" beforeDir="false" afterPath="$PROJECT_DIR$/targetText" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/validation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordsFromText" beforeDir="false" afterPath="$PROJECT_DIR$/wordsFromText" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +136,13 @@
       <workItem from="1585066077498" duration="29600000" />
       <workItem from="1585404715151" duration="7414000" />
       <workItem from="1585742355932" duration="4220000" />
-      <workItem from="1585751461398" duration="11853000" />
+      <workItem from="1585751461398" duration="15600000" />
+      <workItem from="1585912907380" duration="3498000" />
+      <workItem from="1586101739912" duration="776000" />
+      <workItem from="1586364077108" duration="2595000" />
+      <workItem from="1586425673744" duration="1078000" />
+      <workItem from="1586538114598" duration="2071000" />
+      <workItem from="1586604886357" duration="3829000" />
     </task>
     <servers />
   </component>
@@ -193,6 +187,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/QuestionPicker.java</url>
           <line>26</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/TextGenerator.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,14 +1,29 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class TextGenerator {
-
-    public String generateSimpleSentenceNVN(String noun1, String verb, String noun2) {
-        return concat(noun1, verb, noun2, ".");
+    PatternCreator patternCreator;
+    TextGenerator (PatternCreator patternCreator) {
+        this.patternCreator = patternCreator;
+    }
+    public String generateSimpleSentence(List<WordsRetrieval.Word> words) {
+        List<String> simpleWords = addRandomWords(words);
+        simpleWords.add(".");
+        String[] a = new String[words.size()];
+        return concat(simpleWords.toArray(a));
     }
 
-    public String generateSimpleSentenceNVA(String noun, String verb, String adjective) {
-        return concat(noun, verb, adjective, ".");
+    private List<String> addRandomWords (List<WordsRetrieval.Word> words) {
+        List<String> simpleWords = new ArrayList<>();
+        for (int i = 0; i < words.size(); i++) {
+            if (Math.random() < 0.5) {
+                simpleWords.add(patternCreator.pickPairReversed("preposition", words.get(i).type, words.get(i).value).string1);
+            }
+            simpleWords.add(words.get(i).value);
+        }
+        return simpleWords;
     }
+
     public String generateStructureSentence(List<String> structure1, String noun1, String verb, List<String> structure2, String noun2) {
         String concatenation = "";
         for (String s : structure1) {
