@@ -31,7 +31,6 @@ public class PhraseBuilder {
     @SuppressWarnings("Duplicates")
     private Sentence generateSentence () {
         wordGroupings.getGroup();
-        System.out.println()
 //        int path = Helper.chooseRandomPath(SENTENCE_TYPES);
 //        switch (path) {
 //            // noun + verb + noun
