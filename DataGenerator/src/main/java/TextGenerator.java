@@ -2,28 +2,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TextGenerator {
-    PatternCreator patternCreator;
-    TextGenerator (PatternCreator patternCreator) {
-        this.patternCreator = patternCreator;
+    WordGroupings wordGroupings;
+    TextGenerator (WordGroupings wordGroupings) {
+        this.wordGroupings = wordGroupings;
     }
-    public String generateSimpleSentence(List<WordsRetrieval.Word> words) {
+    public String generateSimpleSentence(WordGroupings.Word[] words) {
         List<String> simpleWords = addRandomWords(words);
         simpleWords.add(".");
-        String[] a = new String[words.size()];
+        String[] a = new String[words.length];
         return concat(simpleWords.toArray(a));
     }
 
-    private List<String> addRandomWords (List<WordsRetrieval.Word> words) {
+    private static final double RANDOM_CHANCE = 0.5;
+    private List<String> addRandomWords (WordGroupings.Word[] words) {
         List<String> simpleWords = new ArrayList<>();
-        for (int i = 0; i < words.size(); i++) {
-            if (Math.random() < 0.5) {
-                simpleWords.add(patternCreator.pickPairReversed("preposition", words.get(i).type, words.get(i).value).string1);
+        for (int i = 0; i < words.length; i++) {
+            if (Math.random() < RANDOM_CHANCE) {
+                List<String> values = new ArrayList<>(), types = new ArrayList<>();
+                values.add(null); values.add(null); values.add(words[i].value);
+                types.add(null); types.add("preposition"); types.add(words[i].type);
+                if (i > 1) {
+                    values.set(i - 2, words[i - 2].value);
+                    types.set(i - 2, words[i - 2].type);
+                }
+                WordGroupings.Group group;
+                group = wordGroupings.getPartGroup(values, types, 2);
+                if (group != null) simpleWords.add(group.words[1].value);
             }
-            simpleWords.add(words.get(i).value);
+            simpleWords.add(words[i].value);
         }
         return simpleWords;
     }
 
+    //TODO: add random words
     public String generateStructureSentence(List<String> structure1, String noun1, String verb, List<String> structure2, String noun2) {
         String concatenation = "";
         for (String s : structure1) {

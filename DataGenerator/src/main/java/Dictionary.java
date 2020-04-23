@@ -5,7 +5,7 @@ public class Dictionary {
     private Map<String, WordsRetrieval.Word> wordMappings = new HashMap<>();
     Dictionary() {
         WordsRetrieval wordsRetrieval = new WordsRetrieval();
-        List<WordsRetrieval.Word> words = wordsRetrieval.getWords();
+        List<WordsRetrieval.Word> words = wordsRetrieval.getWordsStanfordTagger();
         fillDictionary(words);
     }
     public String getRandomWord(String type) {
@@ -18,10 +18,29 @@ public class Dictionary {
 
     private void fillDictionary(List<WordsRetrieval.Word> words) {
         for (WordsRetrieval.Word word : words) {
-            dictionary.computeIfAbsent(word.type, (k) -> new ArrayList<>());
-            dictionary.get(word.type).add(word.mapping);
-            wordMappings.put(word.value, word);
+            String generalType = getGeneralType(word.type);
+            dictionary.computeIfAbsent(generalType, (k) -> new ArrayList<>());
+            dictionary.get(generalType).add(word.value);
+//            wordMappings.put(word.value, word);
         }
+    }
+
+    public static String getGeneralType(String type) {
+        switch (type.charAt(0)) {
+            case 'n':
+                return "noun";
+            case 'v':
+                return "verb";
+            case 'r':
+                return "adverb";
+            case 'j':
+                return "adjective";
+            case 'd':
+                return "preposition";
+            case 'i':
+                return "preposition";
+        }
+        return "trash";
     }
 
     public void printWords() {

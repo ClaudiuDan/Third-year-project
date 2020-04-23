@@ -9,6 +9,8 @@ public class Generator {
             textData.append(phrase.text);
             codeData.append(phrase.code);
             examplesCounter++;
+            System.out.println(examplesCounter);
+
         }
         DataOutput dataOutput = new DataOutput();
         dataOutput.buildDatasets(textData, codeData);

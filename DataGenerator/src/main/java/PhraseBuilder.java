@@ -5,14 +5,13 @@ public class PhraseBuilder {
     private Phrase text, code;
     private static TextGenerator textGenerator;
     private static CodeGenerator codeGenerator = new CodeGenerator();
-    private static PatternCreator patternCreator = new PatternCreator();
+//    private static PatternCreator patternCreator = new PatternCreator();
     private static QuestionPicker questionPicker;
-    private static WordGroupings wordGroupings;
+    private static WordGroupings wordGroupings = new WordGroupings();
     public Pair<Phrase> build () {
         text = new Phrase(); code = new Phrase();
-        textGenerator = new TextGenerator(patternCreator);
+        textGenerator = new TextGenerator(wordGroupings);
         questionPicker = new QuestionPicker(textGenerator, codeGenerator, text, code);
-        wordGroupings = new WordGroupings();
         generatePhrase();
         return new Pair<>(text, code);
     }
@@ -21,75 +20,94 @@ public class PhraseBuilder {
     private void generatePhrase () {
         int numberSentences = Helper.chooseRandomPath(MAX_SENTENCES);
         for (int i = 0; i < numberSentences; i++) {
-            generateSentence();
+            generateSentence(-1);
             index++;
         }
     }
 
     private static final int SENTENCE_TYPES = 3;
     private static final int QUESTIONS = 2;
+    private static final String NOUN = "noun",  VERB = "verb", PREP = "preposition", ADJ = "adjective", ADV = "adverb";
     @SuppressWarnings("Duplicates")
-    private Sentence generateSentence () {
-        wordGroupings.getGroup();
-//        int path = Helper.chooseRandomPath(SENTENCE_TYPES);
-//        switch (path) {
-//            // noun + verb + noun
-//            case 1: {
-//                Dictionary.Pair<String, String> pair = patternCreator.pickPair("noun", "verb");
-//                String noun1 = pair.string1, verb = pair.string2;
-//                String noun2 = patternCreator.pickPair("verb", verb, "noun").string2;
-//                List<WordsRetrieval.Word> words = new ArrayList<>();
-//                words.add(new WordsRetrieval.Word(noun1, "noun"));
-//                words.add(new WordsRetrieval.Word(verb, "verb"));
-//                words.add(new WordsRetrieval.Word(noun2, "noun"));
-//                text.extend(textGenerator.generateSimpleSentence(words), index);
-//                code.extend(codeGenerator.generateAddEdgeAction(noun1, noun2, verb), index);
-//                code.extend(codeGenerator.generateAddEdge(noun1, verb), index);
-//                QuestionPicker.pickQuestionsSimple(QUESTIONS, patternCreator, noun1, verb, noun2);
-//                break;
-//            }
-//            // noun + verb + adj
-//            case 2: {
-//                Dictionary.Pair<String, String> pair = patternCreator.pickPair("noun", "verb");
-//                String noun = pair.string1, verb = pair.string2;
-//                String adj = patternCreator.pickPair("verb", verb, "adjective").string2;
-//                List<WordsRetrieval.Word> words = new ArrayList<>();
-//                words.add(new WordsRetrieval.Word(noun, "noun"));
-//                words.add(new WordsRetrieval.Word(verb, "verb"));
-//                words.add(new WordsRetrieval.Word(adj, "adjective"));
-//                text.extend(textGenerator.generateSimpleSentence(words), index);
-//                code.extend(codeGenerator.generateAddEdgeAction(noun, adj, verb), index);
-//                code.extend(codeGenerator.generateAddEdge(noun, verb), index);
-//                QuestionPicker.pickQuestionsSimple(QUESTIONS, patternCreator, noun, verb, adj);
-//                break;
-//            }
-//            // adjNoun + verb + adjNoun
-//            case 3: {
-//                Dictionary.Pair<String, String> pair = patternCreator.pickPair("noun", "verb");
-//                String noun1 = pair.string1, verb = pair.string2;
-//                List<String> structure1 = buildAdjNounStructure(noun1);
-//                String noun2 = patternCreator.pickPair("verb", verb, "noun").string2;
-//                List<String> structure2 = buildAdjNounStructure(noun2);
-//                text.extend(textGenerator.generateStructureSentence(structure1, noun1, verb, structure2, noun2), index);
-//                code.extend(codeGenerator.generateAddEdge(noun1, verb), index);
-//                code.extend(codeGenerator.generateAddEdgeStructure(noun1, structure1), index);
-//                code.extend(codeGenerator.generateAddEdgeStructure(noun2, structure2), index);
-//                QuestionPicker.pickQuestionsStructure(QUESTIONS, patternCreator, verb, structure1, noun1, structure2, noun2);
-//                break;
-//            }
-//        }
-        return null;
+    private void generateSentence (int forcePath) {
+        int path = Helper.chooseRandomPath(SENTENCE_TYPES);
+        if (forcePath != -1)
+            path = forcePath;
+        switch (path) {
+            // noun + verb + noun
+            case 1: {
+                List<String> types = new ArrayList<>();
+                types.add(NOUN); types.add(VERB); types.add(NOUN);
+                WordGroupings.Group group = wordGroupings.getFullGroup(types);
+                if (group == null) {
+                    generateSentence(1);
+                    return;
+                }
+                String[] tempValues = new String[] {group.words[0].value,
+                        group.words[1].value, group.words[2].value};
+                text.extend(textGenerator.generateSimpleSentence(group.words), index);
+                code.extend(codeGenerator.generateAddEdgeAction(tempValues[0],
+                        tempValues[2], tempValues[1]), index);
+                code.extend(codeGenerator.generateAddEdge(tempValues[0], tempValues[1]), index);
+                QuestionPicker.pickQuestionsSimple(QUESTIONS, wordGroupings, tempValues);
+                break;
+            }
+            // noun + verb + adverb
+            case 2: {
+                List<String> types = new ArrayList<>();
+                types.add(NOUN); types.add(VERB); types.add(ADV);
+                WordGroupings.Group group = wordGroupings.getFullGroup(types);
+                if (group == null) {
+                    generateSentence(1);
+                    return;
+                }
+                String[] tempValues = new String[] {group.words[0].value,
+                        group.words[1].value, group.words[2].value};
+                text.extend(textGenerator.generateSimpleSentence(group.words), index);
+                code.extend(codeGenerator.generateAddEdgeAction(tempValues[0], tempValues[2], tempValues[1]), index);
+                code.extend(codeGenerator.generateAddEdge(tempValues[0], tempValues[1]), index);
+                QuestionPicker.pickQuestionsSimple(QUESTIONS, wordGroupings, tempValues);
+                break;
+            }
+            // adjNoun + verb + adjNoun
+            case 3: {
+                List<String> types = new ArrayList<>();
+                types.add(NOUN); types.add(VERB); types.add(NOUN);
+                WordGroupings.Group group = wordGroupings.getFullGroup(types);
+                if (group == null) {
+                    generateSentence(1);
+                    return;
+                }
+                String[] tempValues = new String[] {group.words[0].value,
+                        group.words[1].value, group.words[2].value};
+                //TODO: add action to edge 
+                List<String> structure1 = buildAdjNounStructure(tempValues[0]);
+                List<String> structure2 = buildAdjNounStructure(tempValues[2]);
+                text.extend(textGenerator.generateStructureSentence(structure1, tempValues[0], tempValues[1], structure2, tempValues[2]), index);
+                code.extend(codeGenerator.generateAddEdge(tempValues[0], tempValues[1]), index);
+                code.extend(codeGenerator.generateAddEdgeStructure(tempValues[0], structure1), index);
+                code.extend(codeGenerator.generateAddEdgeStructure(tempValues[2], structure2), index);
+                QuestionPicker.pickQuestionsStructure(QUESTIONS, tempValues[1], structure1, tempValues[0], structure2, tempValues[2]);
+                break;
+            }
+        }
     }
 
     private static final int ADJECTIVES = 1;
     private List<String> buildAdjNounStructure(String noun) {
         int numberOfAdj = Helper.chooseRandomPath(ADJECTIVES);
         List<String> structure = new ArrayList<>();
+        List<String> types = new ArrayList<>(), values = new ArrayList<>();
+        types.add(null); types.add(ADJ); types.add(NOUN);
+        values.add(null); values.add(null); values.add(noun);
         for (int i = 0; i < numberOfAdj; i++) {
-            String pickedWord;
+            WordGroupings.Group group;
             //TODO: fix possible loop for more words in structure
-            while (!isUnique(pickedWord = patternCreator.pickPairReversed("adjective", "noun", noun).string1, structure)) { }
-            structure.add(pickedWord);
+            while ((group = wordGroupings.getPartGroup(values, types, 2)) != null &&
+                    !isUnique(group.words[1].value, structure)) { }
+            if (group != null) {
+                structure.add(group.words[1].value);
+            }
         }
         return structure;
     }

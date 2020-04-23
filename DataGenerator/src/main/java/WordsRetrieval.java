@@ -14,6 +14,7 @@ public class WordsRetrieval {
         }
     }
 
+    @Deprecated
     public List<Word> getWords () {
         List<Word> words = new ArrayList<>();
         String line;
@@ -21,6 +22,21 @@ public class WordsRetrieval {
             while ((line = reader.readLine()) != null) {
                 String[] split = line.split(" ");
                 words.add(new Word(split[1], split[2], split[0]));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return words;
+    }
+
+    public List<Word> getWordsStanfordTagger () {
+        List<Word> words = new ArrayList<>();
+        String line;
+        try {
+            while ((line = reader.readLine()) != null) {
+                String[] split = line.split("_");
+                words.add(new Word(split[0], split[1]));
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,3 +1,4 @@
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 import net.sf.extjwnl.JWNLException;
 import net.sf.extjwnl.data.IndexWord;
 import net.sf.extjwnl.data.IndexWordSet;
@@ -9,7 +10,7 @@ import java.util.Map;
 
 public class TextHandler {
     private File raw_text = new File("text");
-    public static BufferedWriter writer, errorWriter;
+    public static BufferedWriter writer, errorWriter, taggedTextWriter;
     private BufferedReader manualWordsReader;
     static int lastPosition = 0;
 
@@ -17,6 +18,7 @@ public class TextHandler {
         try {
             writer = new BufferedWriter(new FileWriter("wordsFromText"));
             errorWriter = new BufferedWriter(new FileWriter("errors"));
+            taggedTextWriter = new BufferedWriter(new FileWriter("taggedText"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -24,8 +26,8 @@ public class TextHandler {
     int counter = 0;
     private Map<String, Boolean> apparitions = new HashMap<>();
 
-
-    public void produceWords() {
+    @Deprecated
+    public void produceWordsWordNet() {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(raw_text));
             String line;
@@ -57,6 +59,52 @@ public class TextHandler {
             close();
         }
     }
+
+    Map<String, String> existingWords = new HashMap<>();
+    public void produceWordsStanfordTagger() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(raw_text));
+            String line;
+            MaxentTagger tagger = new MaxentTagger(
+                    "english-left3words-distsim.tagger");
+            while ((line = reader.readLine()) != null) {
+//                if (ignoreLine(line))
+//                    continue;
+                line = line.toLowerCase();
+                String tagged = tagger.tagString(line).toLowerCase();
+                String[] split = tagged.split(" ");
+                for (String constr : split) {
+                    String[] separated = constr.split("_");
+                    separated[0] = separated[0].toLowerCase();
+                    if (existingWords.get(separated[0]) == null ||
+                            !existingWords.get(separated[0]).equals(separated[1])) {
+                        addWord(separated[0], separated[1], writer);
+                        writer.write("\n");
+                        existingWords.put(separated[0], separated[1]);
+                    }
+                    addWord(separated[0], separated[1], taggedTextWriter);
+                }
+                taggedTextWriter.write("\n");
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+        }
+        finally {
+            close();
+        }
+    }
+
+    public static boolean ignoreLine (String line) {
+        char[] markers = new char[]{'\'', '-', '\"', '(', ')', '&', ':'};
+        for (Character c : markers) {
+            if (line.contains("" + c))
+                return true;
+        }
+        return false;
+    }
+
+    @Deprecated
     private void addWord (String generalValue, String value, String type) {
         try {
             writer.write(generalValue + " " + value + " " + type + "\n");
@@ -64,11 +112,21 @@ public class TextHandler {
             e.printStackTrace();
         }
     }
+
+    private void addWord (String value, String type, BufferedWriter writer) {
+        try {
+            writer.write( value + "_" + type + " ");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void close () {
         try {
             System.out.println(lastPosition);
             writer.close();
             errorWriter.close();
+            taggedTextWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

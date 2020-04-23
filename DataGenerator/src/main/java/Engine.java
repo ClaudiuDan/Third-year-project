@@ -1,3 +1,4 @@
+import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 import net.sf.extjwnl.JWNLException;
 import net.sf.extjwnl.data.IndexWord;
 import net.sf.extjwnl.data.IndexWordSet;
@@ -6,17 +7,26 @@ import net.sf.extjwnl.dictionary.Dictionary;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Engine {
     public static void main (String[] args) {
-
-
+        TextHandler textHandler = new TextHandler();
+        textHandler.produceWordsStanfordTagger();
         Generator generator = new Generator();
         generator.startGeneration();
-//        TextHandler textHandler = new TextHandler();
-//        textHandler.produceWords();
+        WordGroupings wordGroupings = new WordGroupings();
+        for (int i = 0; i < 0; i++) {
+            List<String> types = new ArrayList<>();
+            List<String> values = new ArrayList<>();
+            types.add("noun"); types.add("preposition"); types.add("noun");
+            values.add("man"); values.add(null); values.add(null);
+            WordGroupings.Group group = wordGroupings.getPartGroup(values, types, 0);
+            for (WordGroupings.Word word : group.words) {
+                System.out.print(word.value + " ");
+            }
+            System.out.println(group.occurrences);
+            System.out.println();
+        }
     }
 }
