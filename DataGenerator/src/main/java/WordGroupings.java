@@ -10,23 +10,24 @@ public class WordGroupings {
         try {
             buildGroups();
             groupLists();
-            for (Group group : groupsCheck.keySet()) {
-                fullGroups.add(new Group(groupsCheck.get(group), group.words));
-            }
+            buildFullSortedGroups();
 
-            int maxim = -1;
-             Group group = null;
-            for (Group g : groupsCheck.keySet()) {
-                if (maxim < groupsCheck.get(g)) {
-                    maxim = groupsCheck.get(g);
-                    group = g;
-                }
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     private BufferedWriter writer;
+
+    private int sumFullGroups = 0;
+    private void buildFullSortedGroups() {
+        for (Group group : groupsCheck.keySet()) {
+            fullGroups.add(new Group(groupsCheck.get(group), group.words));
+        }
+        Collections.sort(fullGroups);
+        for (Group group : fullGroups) {
+            sumFullGroups += group.occurrences;
+        }
+    }
 
     private void buildGroups () throws IOException {
         File raw_text = new File("text");
@@ -85,25 +86,52 @@ public class WordGroupings {
         for (String s : types)
             nulledFilled.add(null);
 
-        for (Group group : fullGroups) {
-            if (checkGroupMatch(nulledFilled, types, group.words)) {
-                filteredGroups.add(group);
-            }
+        String key = "";
+
+        for (String type : types) {
+            key += type;
         }
-        return rouletteWheel(filteredGroups);
+
+        if (sortedFullGroups.get(key) == null) {
+            int sum = 0;
+            for (Group group : fullGroups) {
+                if (checkGroupMatch(nulledFilled, types, group.words)) {
+                    sum += group.occurrences;
+                    group.occurrences = sum;
+                    filteredGroups.add(group);
+                    sums.put(key, sum);
+
+                }
+            }
+            sortedFullGroups.put(key, filteredGroups);
+        }
+        return binarySearch(sortedFullGroups.get(key), key);
     }
 
+    Map<String, List<Group>> sortedFullGroups = new HashMap<>();
+    Map<String, Integer> sums = new HashMap<>();
     public Group getPartGroup(List<String> values, List<String> types, int index) {
         Word word = new Word(values.get(index), types.get(index));
         List<Group> filteredGroups = new ArrayList<>();
         if (sortedGroups.get(index).get(word) == null) {
             return null;
         }
+
         for (Group group : sortedGroups.get(index).get(word)) {
-            if (checkGroupMatch(values, types, group.words))
+            if (checkGroupMatch(values, types, group.words)) {
                 filteredGroups.add(group);
+            }
         }
         return rouletteWheel(filteredGroups);
+    }
+
+    private Group binarySearch(List<Group> groups, String key) {
+        Group group = new Group((int)(Math.random() * sums.get(key)), null);
+        int index = Collections.binarySearch(groups, group);
+        if (index < 0) {
+            index += 1;
+        }
+        return groups.get(Math.abs(index));
     }
 
     private boolean checkGroupMatch(List<String> values, List<String> types, Word[] matchAgainst) {
@@ -118,6 +146,7 @@ public class WordGroupings {
         return true;
     }
 
+    //TODO: make it log ;)
     private Group rouletteWheel (List<Group> groups) {
         if (groups.size() == 0)
             return null;
@@ -141,7 +170,7 @@ public class WordGroupings {
         return s;
     }
 
-    class Group {
+    class Group implements Comparable<Group>{
         public Word[] words;
         int occurrences = 1;
         Group (Word... words) {
@@ -169,6 +198,15 @@ public class WordGroupings {
                 builder.append(word.value + word.type);
             }
             return builder.toString().hashCode();
+        }
+
+        @Override
+        public int compareTo(Group o) {
+            if (this.occurrences > o.occurrences)
+                return 1;
+            if (this.occurrences == o.occurrences)
+                return 0;
+            return -1;
         }
     }
 

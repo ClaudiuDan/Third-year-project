@@ -80,11 +80,11 @@ public class PhraseBuilder {
                 }
                 String[] tempValues = new String[] {group.words[0].value,
                         group.words[1].value, group.words[2].value};
-                //TODO: add action to edge 
                 List<String> structure1 = buildAdjNounStructure(tempValues[0]);
                 List<String> structure2 = buildAdjNounStructure(tempValues[2]);
                 text.extend(textGenerator.generateStructureSentence(structure1, tempValues[0], tempValues[1], structure2, tempValues[2]), index);
                 code.extend(codeGenerator.generateAddEdge(tempValues[0], tempValues[1]), index);
+                code.extend(codeGenerator.generateAddEdgeAction(tempValues[0], tempValues[2], tempValues[1]), index);
                 code.extend(codeGenerator.generateAddEdgeStructure(tempValues[0], structure1), index);
                 code.extend(codeGenerator.generateAddEdgeStructure(tempValues[2], structure2), index);
                 QuestionPicker.pickQuestionsStructure(QUESTIONS, tempValues[1], structure1, tempValues[0], structure2, tempValues[2]);
@@ -93,7 +93,8 @@ public class PhraseBuilder {
         }
     }
 
-    private static final int ADJECTIVES = 1;
+    private static final int ADJECTIVES = 3;
+    private static final int BREAK_LIMIT = 5;
     private List<String> buildAdjNounStructure(String noun) {
         int numberOfAdj = Helper.chooseRandomPath(ADJECTIVES);
         List<String> structure = new ArrayList<>();
@@ -101,10 +102,11 @@ public class PhraseBuilder {
         types.add(null); types.add(ADJ); types.add(NOUN);
         values.add(null); values.add(null); values.add(noun);
         for (int i = 0; i < numberOfAdj; i++) {
-            WordGroupings.Group group;
+            WordGroupings.Group group = null;
             //TODO: fix possible loop for more words in structure
-            while ((group = wordGroupings.getPartGroup(values, types, 2)) != null &&
-                    !isUnique(group.words[1].value, structure)) { }
+            int breakCounter = 0;
+            while (breakCounter < BREAK_LIMIT && (group = wordGroupings.getPartGroup(values, types, 2)) != null &&
+                    !isUnique(group.words[1].value, structure)) { ++breakCounter; group = null;}
             if (group != null) {
                 structure.add(group.words[1].value);
             }

@@ -3,38 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/errors" beforeDir="false" afterPath="$PROJECT_DIR$/errors" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TextGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WordGroupings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WordGroupings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WordsRetrieval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WordsRetrieval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Dictionary$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dictionary$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Engine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/QuestionPicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/QuestionPicker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TextGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TextHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordsRetrieval$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordsRetrieval$Word.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordsRetrieval.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordsRetrieval.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text" beforeDir="false" afterPath="$PROJECT_DIR$/text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/validation.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordsFromText" beforeDir="false" afterPath="$PROJECT_DIR$/wordsFromText" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +155,9 @@
       <workItem from="1587117536965" duration="5543000" />
       <workItem from="1587220998743" duration="582000" />
       <workItem from="1587303197968" duration="10547000" />
-      <workItem from="1587646109146" duration="3294000" />
+      <workItem from="1587646109146" duration="4861000" />
+      <workItem from="1587733295198" duration="728000" />
+      <workItem from="1587821797180" duration="6486000" />
     </task>
     <servers />
   </component>
@@ -210,6 +194,12 @@
       <configuration name="Application">
         <watch expression="groupsCheck.get(group)" language="JAVA" />
         <watch expression="groupsCheck.keySet().size()" language="JAVA" />
+        <watch expression="sums.get(key)" language="JAVA" />
+        <watch expression="(int)Math.random() * sums.get(key)" language="JAVA" />
+        <watch expression="groups.get(index)" language="JAVA" />
+        <watch expression="fullGroups" language="JAVA" />
+        <watch expression="fullGroups.get(100000).occurrences" language="JAVA" />
+        <watch expression="fullGroups.get(fullGroups.size - 1).occurrences" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
