@@ -16,17 +16,11 @@ public class WordGroupings {
             e.printStackTrace();
         }
     }
-    private BufferedWriter writer;
-
-    private int sumFullGroups = 0;
     private void buildFullSortedGroups() {
         for (Group group : groupsCheck.keySet()) {
             fullGroups.add(new Group(groupsCheck.get(group), group.words));
         }
         Collections.sort(fullGroups);
-        for (Group group : fullGroups) {
-            sumFullGroups += group.occurrences;
-        }
     }
 
     private void buildGroups () throws IOException {
@@ -35,7 +29,6 @@ public class WordGroupings {
         BufferedReader reader = new BufferedReader(new FileReader(raw_text));
         BufferedReader taggedReader = new BufferedReader(new FileReader(taggedText));
         String line;
-        writer = new BufferedWriter(new FileWriter(new File("debug")));
         while ((line = taggedReader.readLine()) != null) {
             line = line.toLowerCase();
             String[] splitLine = line.split(" ");

@@ -1,6 +1,6 @@
 public class Generator {
     protected MyStringBuilder textData = new MyStringBuilder(), codeData = new MyStringBuilder();
-    public static final int EXAMPLES = 10000;
+    public static final int EXAMPLES = 20000;
     public void startGeneration() {
         PhraseBuilder phraseBuilder = new PhraseBuilder();
         int examplesCounter = 0;

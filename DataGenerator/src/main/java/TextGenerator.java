@@ -13,7 +13,7 @@ public class TextGenerator {
         return concat(simpleWords.toArray(a));
     }
 
-    private static final double RANDOM_CHANCE = 0.0;
+    private static final double RANDOM_CHANCE = 0;
     private List<String> addRandomWords (WordGroupings.Word[] words) {
         List<String> simpleWords = new ArrayList<>();
         for (int i = 0; i < words.length; i++) {

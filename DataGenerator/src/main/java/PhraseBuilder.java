@@ -16,7 +16,7 @@ public class PhraseBuilder {
         return new Pair<>(text, code);
     }
 
-    private static final int MAX_SENTENCES = 3;
+    private static final int MAX_SENTENCES = 1;
     private void generatePhrase () {
         int numberSentences = Helper.chooseRandomPath(MAX_SENTENCES);
         for (int i = 0; i < numberSentences; i++) {
@@ -26,7 +26,7 @@ public class PhraseBuilder {
     }
 
     private static final int SENTENCE_TYPES = 3;
-    private static final int QUESTIONS = 2;
+    private static final int QUESTIONS = 1;
     private static final String NOUN = "noun",  VERB = "verb", PREP = "preposition", ADJ = "adjective", ADV = "adverb";
     @SuppressWarnings("Duplicates")
     private void generateSentence (int forcePath) {
@@ -93,7 +93,7 @@ public class PhraseBuilder {
         }
     }
 
-    private static final int ADJECTIVES = 3;
+    private static final int ADJECTIVES = 2;
     private static final int BREAK_LIMIT = 5;
     private List<String> buildAdjNounStructure(String noun) {
         int numberOfAdj = Helper.chooseRandomPath(ADJECTIVES);

@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TextGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WordGroupings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WordGroupings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataOutput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TextGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings.class" afterDir="false" />
@@ -157,7 +156,10 @@
       <workItem from="1587303197968" duration="10547000" />
       <workItem from="1587646109146" duration="4861000" />
       <workItem from="1587733295198" duration="728000" />
-      <workItem from="1587821797180" duration="6486000" />
+      <workItem from="1587821797180" duration="9608000" />
+      <workItem from="1587910144240" duration="4104000" />
+      <workItem from="1588100322704" duration="764000" />
+      <workItem from="1588161341650" duration="1959000" />
     </task>
     <servers />
   </component>
