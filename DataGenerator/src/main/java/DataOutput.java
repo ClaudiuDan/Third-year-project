@@ -34,7 +34,6 @@ public class DataOutput {
             e.printStackTrace();
         }
     }
-    private static final float TRAIN_RATIO = 3/5f, VALID_RATIO = 1 / 5f, TEST_RATIO = 1 / 5f;
     BufferedWriter trainWriter, validationWriter, testWriter;
     public void buildDatasets (Generator.MyStringBuilder input, Generator.MyStringBuilder target) {
         try {
@@ -42,7 +41,7 @@ public class DataOutput {
             String[] targetLines = target.data.toString().split("\n");
             int counter = 0;
             trainWriter.write("src,trg\n");
-            while (counter < inputLines.length && counter < Generator.EXAMPLES * TRAIN_RATIO) {
+            while (counter < inputLines.length && counter < Params.EXAMPLES * Params.TRAIN_RATIO) {
                 trainWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
                 counter++;
             }
@@ -50,7 +49,7 @@ public class DataOutput {
 
             int saved = counter;
             validationWriter.write("src,trg\n");
-            while (counter < inputLines.length && counter < saved + Generator.EXAMPLES * VALID_RATIO) {
+            while (counter < inputLines.length && counter < saved + Params.EXAMPLES * Params.VALID_RATIO) {
                 validationWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
                 counter++;
             }
@@ -58,7 +57,7 @@ public class DataOutput {
 
             saved = counter;
             testWriter.write("src,trg\n");
-                while (counter < inputLines.length && counter < saved + Generator.EXAMPLES * TEST_RATIO) {
+                while (counter < inputLines.length && counter < saved + Params.EXAMPLES * Params.TEST_RATIO) {
                     testWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
                     counter++;
                 }

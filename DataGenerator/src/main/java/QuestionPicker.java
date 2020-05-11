@@ -13,9 +13,9 @@ public class QuestionPicker {
         this.text = text; this.code = code;
     }
 
-    public static void pickQuestionsSimple(int n, WordGroupings wordGroupings, String... words) {
+    public static void pickQuestionsSimple(WordGroupings wordGroupings, String... words) {
         Random random = new Random();
-        int limit = random.nextInt(n);
+        int limit = random.nextInt(Params.MAX_QUESTIONS);
         int questionIndexText = -1, questionIndexCode = -2;
 
         for (int i = 0 ; i < limit; i++) {
@@ -53,10 +53,10 @@ public class QuestionPicker {
     }
 
     private static final int STRUCTURE_QUESTIONS = 2;
-    public static void pickQuestionsStructure(int n, String verb, List<String> structure1, String noun1,
+    public static void pickQuestionsStructure(String verb, List<String> structure1, String noun1,
                                        List<String> structure2, String noun2) {
         Random random = new Random();
-        int limit = random.nextInt(n);
+        int limit = random.nextInt(Params.MAX_QUESTIONS);
         int questionIndexText = -1, questionIndexCode = -2;
         for (int i = 0; i < limit; i++) {
             int pick = random.nextInt(STRUCTURE_QUESTIONS);

@@ -20,16 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataOutput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Params.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Params.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TextGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WordTypeExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WordTypeExtractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodeGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DataOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataOutput.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Dictionary$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dictionary$Pair.class" afterDir="false" />
@@ -39,6 +41,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Grammar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Grammar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Params.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Params.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PatternCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PatternCreator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" afterDir="false" />
@@ -46,11 +49,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/QuestionPicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/QuestionPicker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TextGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TextHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordTypeExtractor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordsRetrieval$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordsRetrieval$Word.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordsRetrieval.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordsRetrieval.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
@@ -92,7 +93,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581968772742" />
-    <property name="last_opened_file_path" value="$USER_HOME$/copyOfProject/Third-year-project/DataGenerator" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -115,7 +116,19 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.DatasetTest">
     <configuration name="Engine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Engine" />
       <module name="DataGenerator" />
@@ -123,9 +136,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DatasetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DataGenerator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DatasetTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatasetTest.testTrainSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DataGenerator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DatasetTest" />
+      <option name="METHOD_NAME" value="testTrainSize" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DatasetTest" />
         <item itemvalue="Application.Engine" />
+        <item itemvalue="JUnit.DatasetTest.testTrainSize" />
       </list>
     </recent_temporary>
   </component>
@@ -209,12 +243,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1588876886181">
@@ -272,7 +307,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Generator.java</url>
-          <line>27</line>
+          <line>26</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>

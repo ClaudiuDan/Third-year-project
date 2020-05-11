@@ -1,10 +1,9 @@
 public class Generator {
     protected MyStringBuilder textData = new MyStringBuilder(), codeData = new MyStringBuilder();
-    public static final int EXAMPLES = 5000;
     public void startGeneration() {
         PhraseBuilder phraseBuilder = new PhraseBuilder();
         int examplesCounter = 0;
-        while (examplesCounter < EXAMPLES) {
+        while (examplesCounter < Params.EXAMPLES) {
             PhraseBuilder.Pair<PhraseBuilder.Phrase> phrase = phraseBuilder.build();
             textData.append(phrase.text);
             codeData.append(phrase.code);
@@ -32,10 +31,10 @@ public class Generator {
     static class MyStringBuilder {
         StringBuilder data = new StringBuilder();
         void append (PhraseBuilder.Phrase phrase) {
-            if (Params.QUESTIONS_SHUFFLED = true) {
+            if (Params.QUESTIONS_SHUFFLED == true) {
                 for (PhraseBuilder.Sentence sentence : phrase.sentences) {
                     if (!sentence.value.isEmpty()) {
-                        if (sentence.index == -1) {
+                        if (sentence.index == -1 && !Params.POINTS) {
                             data.append(". ");
                         }
                         data.append(sentence.value + " ");
@@ -52,7 +51,7 @@ public class Generator {
                 boolean first = true;
                 for (PhraseBuilder.Sentence sentence : phrase.sentences) {
                     if (sentence.index < 0 && !sentence.value.isEmpty()) {
-                        if (first && sentence.index == -1) {
+                        if (first && sentence.index == -1 && !Params.POINTS) {
                             data.append(". ");
                             first = false;
                         }

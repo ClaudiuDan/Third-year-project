@@ -16,9 +16,8 @@ public class PhraseBuilder {
         return new Pair<>(text, code);
     }
 
-    private static final int MAX_SENTENCES = 5;
     private void generatePhrase () {
-        int numberSentences = Helper.chooseRandomPath(MAX_SENTENCES);
+        int numberSentences = Helper.chooseRandomPath(Params.MAX_SENTENCES);
         for (int i = 0; i < numberSentences; i++) {
             generateSentence(-1);
             index++;
@@ -26,7 +25,6 @@ public class PhraseBuilder {
     }
 
     private static final int SENTENCE_TYPES = 3;
-    private static final int QUESTIONS = 2;
     private static final String NOUN = "noun",  VERB = "verb", PREP = "preposition", ADJ = "adjective", ADV = "adverb";
     @SuppressWarnings("Duplicates")
     private void generateSentence (int forcePath) {
@@ -50,7 +48,7 @@ public class PhraseBuilder {
                 code.extend(codeGenerator.generateAddEdgeAction(tempValues[0],
                         tempValues[2], tempValues[1]), index);
                 code.extend(codeGenerator.generateAddEdge(tempValues[0], tempValues[1]), index);
-                QuestionPicker.pickQuestionsSimple(QUESTIONS, wordGroupings, tempValues);
+                QuestionPicker.pickQuestionsSimple(wordGroupings, tempValues);
                 break;
             }
             // noun + verb + adverb
@@ -68,7 +66,7 @@ public class PhraseBuilder {
                 text.extend(textGenerator.generateSimpleSentence(group.words), index);
                 code.extend(codeGenerator.generateAddEdgeAction(tempValues[0], tempValues[2], tempValues[1]), index);
                 code.extend(codeGenerator.generateAddEdge(tempValues[0], tempValues[1]), index);
-                QuestionPicker.pickQuestionsSimple(QUESTIONS, wordGroupings, tempValues);
+                QuestionPicker.pickQuestionsSimple(wordGroupings, tempValues);
                 break;
             }
             // adjNoun + verb + adjNoun
@@ -89,16 +87,14 @@ public class PhraseBuilder {
                 code.extend(codeGenerator.generateAddEdgeAction(tempValues[0], tempValues[2], tempValues[1]), index);
                 code.extend(codeGenerator.generateAddEdgeStructure(tempValues[0], structure1), index);
                 code.extend(codeGenerator.generateAddEdgeStructure(tempValues[2], structure2), index);
-                QuestionPicker.pickQuestionsStructure(QUESTIONS, tempValues[1], structure1, tempValues[0], structure2, tempValues[2]);
+                QuestionPicker.pickQuestionsStructure(tempValues[1], structure1, tempValues[0], structure2, tempValues[2]);
                 break;
             }
         }
     }
-
-    private static final int ADJECTIVES = 2;
     private static final int BREAK_LIMIT = 5;
     private List<String> buildAdjNounStructure(String noun) {
-        int numberOfAdj = Helper.chooseRandom(ADJECTIVES);
+        int numberOfAdj = Helper.chooseRandom(Params.MAX_ADJECTIVES);
         List<String> structure = new ArrayList<>();
         List<String> types = new ArrayList<>(), values = new ArrayList<>();
         types.add(null); types.add(ADJ); types.add(NOUN);
