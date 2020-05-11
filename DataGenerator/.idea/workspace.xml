@@ -20,40 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Params.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Params.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TextGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatasetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatasetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DataOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataOutput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Dictionary$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dictionary$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dictionary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Engine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Grammar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Grammar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Params.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Params.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PatternCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PatternCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/QuestionPicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/QuestionPicker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TextGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordsRetrieval$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordsRetrieval$Word.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordsRetrieval.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordsRetrieval.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DatasetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DatasetTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/validation.csv" afterDir="false" />
@@ -136,6 +115,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in DataGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DataGenerator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DatasetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DataGenerator" />
       <option name="PACKAGE_NAME" value="" />
@@ -159,6 +146,7 @@
       <list>
         <item itemvalue="JUnit.DatasetTest" />
         <item itemvalue="Application.Engine" />
+        <item itemvalue="JUnit.All in DataGenerator" />
         <item itemvalue="JUnit.DatasetTest.testTrainSize" />
       </list>
     </recent_temporary>
@@ -306,9 +294,9 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Generator.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/src/main/java/DataOutput.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

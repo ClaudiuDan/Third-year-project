@@ -10,6 +10,7 @@ public class DatasetTest {
         while (reader.readLine() != null) {
             counter++;
         }
+        System.out.println(counter);
         if (counter - 1 != (int) (Params.EXAMPLES * Params.TRAIN_RATIO))
             assert (false);
         else
@@ -151,8 +152,8 @@ public class DatasetTest {
         BufferedReader reader = new BufferedReader(new FileReader(new File("train.csv")));
         String line;
         while ((line = reader.readLine()) != null) {
-            long count = line.chars().filter(c -> isQuestion(c)).count();
-            if (count > Params.MAX_QUESTIONS) {
+            long count = line.chars().filter(this::isQuestion).count();
+            if (count > Params.MAX_QUESTIONS * Params.MAX_SENTENCES) {
                 assert false;
                 return;
             }
@@ -161,7 +162,7 @@ public class DatasetTest {
     }
 
     private boolean isQuestion(Integer c) {
-        if (c.equals('?'))
+        if (c == '?')
             return true;
         return false;
     }
@@ -171,8 +172,8 @@ public class DatasetTest {
         BufferedReader reader = new BufferedReader(new FileReader(new File("validation.csv")));
         String line;
         while ((line = reader.readLine()) != null) {
-            long count = line.chars().filter(c -> isQuestion(c)).count();
-            if (count > Params.MAX_QUESTIONS) {
+            long count = line.chars().filter(this::isQuestion).count();
+            if (count > Params.MAX_QUESTIONS  * Params.MAX_SENTENCES) {
                 assert false;
                 return;
             }
@@ -185,8 +186,8 @@ public class DatasetTest {
         BufferedReader reader = new BufferedReader(new FileReader(new File("test.csv")));
         String line;
         while ((line = reader.readLine()) != null) {
-            long count = line.chars().filter(c -> isQuestion(c)).count();
-            if (count > Params.MAX_QUESTIONS) {
+            long count = line.chars().filter(this::isQuestion).count();
+            if (count > Params.MAX_QUESTIONS * Params.MAX_SENTENCES) {
                 assert false;
                 return;
             }

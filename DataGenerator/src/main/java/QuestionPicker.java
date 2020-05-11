@@ -15,7 +15,7 @@ public class QuestionPicker {
 
     public static void pickQuestionsSimple(WordGroupings wordGroupings, String... words) {
         Random random = new Random();
-        int limit = random.nextInt(Params.MAX_QUESTIONS);
+        int limit = random.nextInt(Params.MAX_QUESTIONS + 1);
         int questionIndexText = -1, questionIndexCode = -2;
 
         for (int i = 0 ; i < limit; i++) {
@@ -56,7 +56,7 @@ public class QuestionPicker {
     public static void pickQuestionsStructure(String verb, List<String> structure1, String noun1,
                                        List<String> structure2, String noun2) {
         Random random = new Random();
-        int limit = random.nextInt(Params.MAX_QUESTIONS);
+        int limit = random.nextInt(Params.MAX_QUESTIONS + 1);
         int questionIndexText = -1, questionIndexCode = -2;
         for (int i = 0; i < limit; i++) {
             int pick = random.nextInt(STRUCTURE_QUESTIONS);
@@ -67,13 +67,14 @@ public class QuestionPicker {
 //                    for (String s : structure1) {
 //                        code.extend(s, -2);
 //                    }
-
+                    break;
                 case 1:
                     text.extend(textGenerator.generateStructureQuestionHowIs(noun2), questionIndexText);
                     code.extend(codeGenerator.generateStructureRelation(structure2, noun2), -questionIndexCode);
 //                    for (String s : structure2) {
 //                        code.extend(s, -2);
 //                    }
+                    break;
             }
         }
     }

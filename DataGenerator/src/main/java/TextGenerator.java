@@ -22,8 +22,8 @@ public class TextGenerator {
                 values.add(null); values.add(null); values.add(words[i].value);
                 types.add(null); types.add("preposition"); types.add(words[i].type);
                 if (i > 1) {
-                    values.set(i - 2, words[i - 2].value);
-                    types.set(i - 2, words[i - 2].type);
+                    values.set(0, words[i - 2].value);
+                    types.set(0, words[i - 2].type);
                 }
                 WordGroupings.Group group;
                 group = wordGroupings.getPartGroup(values, types, 2);

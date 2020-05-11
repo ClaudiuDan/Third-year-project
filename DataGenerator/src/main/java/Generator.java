@@ -32,12 +32,14 @@ public class Generator {
         StringBuilder data = new StringBuilder();
         void append (PhraseBuilder.Phrase phrase) {
             if (Params.QUESTIONS_SHUFFLED == true) {
+                PhraseBuilder.Sentence prevSentence = null;
                 for (PhraseBuilder.Sentence sentence : phrase.sentences) {
                     if (!sentence.value.isEmpty()) {
-                        if (sentence.index == -1 && !Params.POINTS) {
+                        if (sentence.index == -1 && !Params.POINTS && (prevSentence == null || !prevSentence.value.contains("?"))) {
                             data.append(". ");
                         }
                         data.append(sentence.value + " ");
+                        prevSentence = sentence;
                     }
                 }
             }

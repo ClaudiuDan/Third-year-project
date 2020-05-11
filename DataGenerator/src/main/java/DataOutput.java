@@ -41,7 +41,7 @@ public class DataOutput {
             String[] targetLines = target.data.toString().split("\n");
             int counter = 0;
             trainWriter.write("src,trg\n");
-            while (counter < inputLines.length && counter < Params.EXAMPLES * Params.TRAIN_RATIO) {
+            while (counter < (int) (Params.EXAMPLES * Params.TRAIN_RATIO)) {
                 trainWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
                 counter++;
             }
@@ -49,7 +49,7 @@ public class DataOutput {
 
             int saved = counter;
             validationWriter.write("src,trg\n");
-            while (counter < inputLines.length && counter < saved + Params.EXAMPLES * Params.VALID_RATIO) {
+            while (counter < saved + (int)  (Params.EXAMPLES * Params.VALID_RATIO)) {
                 validationWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
                 counter++;
             }
@@ -57,10 +57,10 @@ public class DataOutput {
 
             saved = counter;
             testWriter.write("src,trg\n");
-                while (counter < inputLines.length && counter < saved + Params.EXAMPLES * Params.TEST_RATIO) {
-                    testWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
-                    counter++;
-                }
+            while (counter < saved + (int) (Params.EXAMPLES * Params.TEST_RATIO)) {
+                testWriter.write("\"" + inputLines[counter] + "\"," + "\"" + targetLines[counter] + "\"\n");
+                counter++;
+            }
             testWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
