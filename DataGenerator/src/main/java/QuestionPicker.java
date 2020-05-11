@@ -16,22 +16,25 @@ public class QuestionPicker {
     public static void pickQuestionsSimple(int n, WordGroupings wordGroupings, String... words) {
         Random random = new Random();
         int limit = random.nextInt(n);
-        int questionIndex = -1;
+        int questionIndexText = -1, questionIndexCode = -2;
 
         for (int i = 0 ; i < limit; i++) {
             int pick = random.nextInt(SIMPLE_QUESTIONS);
             switch (pick) {
                 case 0:
-                    text.extend(textGenerator.generateQuestionCheckRelation(words[0], words[2]), questionIndex);
-                    code.extend(codeGenerator.generateAnswerRelation(words[0], words[2]), questionIndex);
+                    text.extend(textGenerator.generateQuestionCheckRelation(words[0], words[2]), questionIndexText);
+                    code.extend(codeGenerator.generateAnswerRelation(words[0], words[2]), questionIndexCode);
+//                    code.extend("yes", -2);
                     break;
                 case 1:
-                    text.extend(textGenerator.generateQuestionDoesThat(words[0], words[1]), questionIndex);
-                    code.extend(codeGenerator.generateAnswerRelation(words[0], words[1]), questionIndex);
+                    text.extend(textGenerator.generateQuestionDoesThat(words[0], words[1]), questionIndexText);
+                    code.extend(codeGenerator.generateAnswerRelation(words[0], words[1]), questionIndexCode);
+//                    code.extend("yes", -2);
                     break;
                 case 2:
-                    text.extend(textGenerator.generateQuestionIsThere(words[0]), questionIndex);
-                    code.extend(codeGenerator.generateAnswerIsThere(words[0]), questionIndex);
+                    text.extend(textGenerator.generateQuestionIsThere(words[0]), questionIndexText);
+                    code.extend(codeGenerator.generateAnswerIsThere(words[0]), questionIndexCode);
+//                    code.extend("yes", -2);
                     break;
                 case 3:
 //                    String doesThat = patternCreator.pickPair("noun", words[0], "verb").string2;
@@ -41,8 +44,9 @@ public class QuestionPicker {
                     WordGroupings.Group group = wordGroupings.getPartGroup(values, types, 1);
                     if (group == null) continue;
                     String doesThat = group.words[2].value;
-                    text.extend(textGenerator.generateQuestionDoesThatWrong(words[0], doesThat), questionIndex);
-                    code.extend(codeGenerator.generateAnswerRelation(words[0], doesThat), questionIndex);
+                    text.extend(textGenerator.generateQuestionDoesThatWrong(words[0], doesThat), questionIndexText);
+                    code.extend(codeGenerator.generateAnswerRelation(words[0], doesThat), questionIndexCode);
+//                    code.extend("no", -2);
                     break;
             }
         }
@@ -53,16 +57,23 @@ public class QuestionPicker {
                                        List<String> structure2, String noun2) {
         Random random = new Random();
         int limit = random.nextInt(n);
-        int questionIndex = -1;
+        int questionIndexText = -1, questionIndexCode = -2;
         for (int i = 0; i < limit; i++) {
             int pick = random.nextInt(STRUCTURE_QUESTIONS);
             switch (pick) {
                 case 0:
-                    text.extend(textGenerator.generateStructureQuestionHowIs(noun1), questionIndex);
-                    code.extend(codeGenerator.generateStructureRelation(structure1, noun1), questionIndex);
+                    text.extend(textGenerator.generateStructureQuestionHowIs(noun1), questionIndexText);
+                    code.extend(codeGenerator.generateStructureRelation(structure1, noun1), -questionIndexCode);
+//                    for (String s : structure1) {
+//                        code.extend(s, -2);
+//                    }
+
                 case 1:
-                    text.extend(textGenerator.generateStructureQuestionHowIs(noun2), questionIndex);
-                    code.extend(codeGenerator.generateStructureRelation(structure2, noun2), questionIndex);
+                    text.extend(textGenerator.generateStructureQuestionHowIs(noun2), questionIndexText);
+                    code.extend(codeGenerator.generateStructureRelation(structure2, noun2), -questionIndexCode);
+//                    for (String s : structure2) {
+//                        code.extend(s, -2);
+//                    }
             }
         }
     }

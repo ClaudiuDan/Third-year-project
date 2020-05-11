@@ -8,12 +8,12 @@ public class TextGenerator {
     }
     public String generateSimpleSentence(WordGroupings.Word[] words) {
         List<String> simpleWords = addRandomWords(words);
-        simpleWords.add(".");
+//        simpleWords.add(".");
         String[] a = new String[words.length];
         return concat(simpleWords.toArray(a));
     }
 
-    private static final double RANDOM_CHANCE = 0;
+    private static final double RANDOM_CHANCE = 0.3;
     private List<String> addRandomWords (WordGroupings.Word[] words) {
         List<String> simpleWords = new ArrayList<>();
         for (int i = 0; i < words.length; i++) {
@@ -36,15 +36,27 @@ public class TextGenerator {
 
     //TODO: add random words
     public String generateStructureSentence(List<String> structure1, String noun1, String verb, List<String> structure2, String noun2) {
-        String concatenation = "";
-        for (String s : structure1) {
-            concatenation = concat(concatenation, s);
-        }
-        concatenation = concat(concatenation, noun1, verb);
-        for (String s : structure2) {
-            concatenation = concat(concatenation, s);
-        }
-        return concat(concatenation, noun2, ".");
+//        String concatenation = "";
+//        for (String s : structure1) {
+//            concatenation = concat(concatenation, s);
+//        }
+//        concatenation = concat(concatenation, noun1, verb);
+//        for (String s : structure2) {
+//            concatenation = concat(concatenation, s);
+//        }
+////        return concat(concatenation, noun2, ".");
+//        return concat(concatenation, noun2);
+        List<WordGroupings.Word> words = new ArrayList<>();
+        for (String s : structure1)
+            words.add(new WordGroupings.Word(s, "adjective"));
+        words.add(new WordGroupings.Word(noun1, "noun"));
+        words.add(new WordGroupings.Word(verb, "verb"));
+        for (String s : structure2)
+            words.add(new WordGroupings.Word(s, "adjective"));
+        words.add(new WordGroupings.Word(noun2, "noun"));
+        WordGroupings.Word[] wordArr = new WordGroupings.Word[words.size()];
+        wordArr = words.toArray(wordArr);
+        return generateSimpleSentence(wordArr);
     }
 
     public String generateStructureQuestionHowIs(String noun) {

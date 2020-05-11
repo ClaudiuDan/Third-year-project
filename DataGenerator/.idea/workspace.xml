@@ -1,23 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f3e80437-06e2-47c3-855f-1fa8ed3f7f1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PhraseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuestionPicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TextGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WordGroupings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WordGroupings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WordTypeExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WordTypeExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodeGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DataOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataOutput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dictionary$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dictionary$Pair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Engine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator$MyStringBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Generator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Grammar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Grammar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PatternCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PatternCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Pair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Phrase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder$Sentence.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PhraseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/QuestionPicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/QuestionPicker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TextGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TextGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TextHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Group.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings$Word.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordGroupings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordGroupings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordTypeExtractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordsRetrieval$Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordsRetrieval$Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordsRetrieval.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordsRetrieval.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/validation.csv" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,13 +72,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="D:\Uni work\DataGenerator\.idea" />
-      </set>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -49,12 +81,18 @@
   </component>
   <component name="ProjectId" id="1X5iB0u8BE4PiZYRIRVcYOSIUJO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581968772742" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/stanford-postagger-full-2018-10-16/stanford-postagger-full-2018-10-16/stanford-postagger.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/copyOfProject/Third-year-project/DataGenerator" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,18 +113,6 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean" />
-    </option>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
     </option>
   </component>
   <component name="RunManager">
@@ -160,11 +186,20 @@
       <workItem from="1587910144240" duration="4104000" />
       <workItem from="1588100322704" duration="764000" />
       <workItem from="1588161341650" duration="1959000" />
+      <workItem from="1588781711877" duration="3660000" />
+      <workItem from="1588849043094" duration="1066000" />
+      <workItem from="1588863926164" duration="3053000" />
+      <workItem from="1588869556754" duration="4924000" />
+      <workItem from="1588876873296" duration="647000" />
+      <workItem from="1588885330811" duration="1580000" />
+      <workItem from="1588933386914" duration="7656000" />
+      <workItem from="1589020023785" duration="3744000" />
+      <workItem from="1589192420091" duration="3925000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
@@ -174,13 +209,58 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1588876886181">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1588876886181" />
+    <state width="1807" height="260" key="GridCell.Tab.0.bottom" timestamp="1589195371748">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="260" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1589195371748" />
+    <state width="1807" height="260" key="GridCell.Tab.0.center" timestamp="1589195371747">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="260" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1589195371747" />
+    <state width="1807" height="260" key="GridCell.Tab.0.left" timestamp="1589195371747">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="260" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1589195371747" />
+    <state width="1807" height="260" key="GridCell.Tab.0.right" timestamp="1589195371747">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="260" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1589195371747" />
+    <state width="1807" height="344" key="GridCell.Tab.1.bottom" timestamp="1588965985311">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1588965985311" />
+    <state width="1807" height="344" key="GridCell.Tab.1.center" timestamp="1588965985309">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1588965985309" />
+    <state width="1807" height="344" key="GridCell.Tab.1.left" timestamp="1588965985308">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1588965985308" />
+    <state width="1807" height="344" key="GridCell.Tab.1.right" timestamp="1588965985310">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1807" height="344" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1588965985310" />
+    <state width="926" height="527" key="XDebugger.FullValuePopup" timestamp="1588873562470">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="926" height="527" key="XDebugger.FullValuePopup/67.27.1853.1053@67.27.1853.1053" timestamp="1588873562470" />
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1589193835631">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1589193835631" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -189,6 +269,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/TextHandler.java</url>
           <line>50</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Generator.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

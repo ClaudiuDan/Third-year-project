@@ -16,7 +16,7 @@ public class PhraseBuilder {
         return new Pair<>(text, code);
     }
 
-    private static final int MAX_SENTENCES = 1;
+    private static final int MAX_SENTENCES = 5;
     private void generatePhrase () {
         int numberSentences = Helper.chooseRandomPath(MAX_SENTENCES);
         for (int i = 0; i < numberSentences; i++) {
@@ -26,7 +26,7 @@ public class PhraseBuilder {
     }
 
     private static final int SENTENCE_TYPES = 3;
-    private static final int QUESTIONS = 1;
+    private static final int QUESTIONS = 2;
     private static final String NOUN = "noun",  VERB = "verb", PREP = "preposition", ADJ = "adjective", ADV = "adverb";
     @SuppressWarnings("Duplicates")
     private void generateSentence (int forcePath) {
@@ -38,6 +38,7 @@ public class PhraseBuilder {
             case 1: {
                 List<String> types = new ArrayList<>();
                 types.add(NOUN); types.add(VERB); types.add(NOUN);
+
                 WordGroupings.Group group = wordGroupings.getFullGroup(types);
                 if (group == null) {
                     generateSentence(1);
@@ -63,6 +64,7 @@ public class PhraseBuilder {
                 }
                 String[] tempValues = new String[] {group.words[0].value,
                         group.words[1].value, group.words[2].value};
+
                 text.extend(textGenerator.generateSimpleSentence(group.words), index);
                 code.extend(codeGenerator.generateAddEdgeAction(tempValues[0], tempValues[2], tempValues[1]), index);
                 code.extend(codeGenerator.generateAddEdge(tempValues[0], tempValues[1]), index);
@@ -96,14 +98,13 @@ public class PhraseBuilder {
     private static final int ADJECTIVES = 2;
     private static final int BREAK_LIMIT = 5;
     private List<String> buildAdjNounStructure(String noun) {
-        int numberOfAdj = Helper.chooseRandomPath(ADJECTIVES);
+        int numberOfAdj = Helper.chooseRandom(ADJECTIVES);
         List<String> structure = new ArrayList<>();
         List<String> types = new ArrayList<>(), values = new ArrayList<>();
         types.add(null); types.add(ADJ); types.add(NOUN);
         values.add(null); values.add(null); values.add(noun);
         for (int i = 0; i < numberOfAdj; i++) {
             WordGroupings.Group group = null;
-            //TODO: fix possible loop for more words in structure
             int breakCounter = 0;
             while (breakCounter < BREAK_LIMIT && (group = wordGroupings.getPartGroup(values, types, 2)) != null &&
                     !isUnique(group.words[1].value, structure)) { ++breakCounter; group = null;}

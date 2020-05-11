@@ -5,4 +5,7 @@ public class Helper {
     static public int chooseRandomPath(int n){
         return random.nextInt(n) + 1;
     }
+    static public int chooseRandom(int n){
+        return random.nextInt(n);
+    }
 }
